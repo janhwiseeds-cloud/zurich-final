@@ -29,7 +29,7 @@ export default function Navbar() {
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group">
-                    <div className="bg-green-600 p-1.5 rounded-lg group-hover:bg-green-500 transition-colors">
+                    <div className="p-1.5 rounded-lg group-hover:bg-green-500 transition-colors">
                         <Image
                             src="/LOGO.png"
                             alt="Logo"
