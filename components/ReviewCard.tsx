@@ -14,7 +14,7 @@ export default function ReviewCard({ review }: { review: Review }) {
             </div>
 
             <p className="text-green-800 text-sm mb-6 leading-relaxed italic">
-                "{review.review}"
+                &quot;{review.review}&quot;
             </p>
 
             <div className="flex items-center gap-4">
