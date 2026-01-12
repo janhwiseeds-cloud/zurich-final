@@ -38,7 +38,7 @@ export default function Navbar() {
                         />
                     </div>
                     <span className="text-xl font-bold tracking-tight text-green-900">
-                        ZURICH <span className="text-green-600">AGRO</span>
+                        ZURICH <span className="text-green-600">AGROSCIENCE</span>
                     </span>
                 </Link>
 
