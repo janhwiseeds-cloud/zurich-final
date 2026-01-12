@@ -29,7 +29,13 @@ export default function Navbar() {
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group">
                     <div className="bg-green-600 p-1.5 rounded-lg group-hover:bg-green-500 transition-colors">
-                        <Leaf className="w-6 h-6 text-white" />
+                        <Image
+                            src="/LOGO.png"
+                            alt="Logo"
+                            width={32}
+                            height={32}
+                            className="w-8 h-8"
+                        />
                     </div>
                     <span className="text-xl font-bold tracking-tight text-green-900">
                         ZURICH <span className="text-green-600">AGRO</span>
