@@ -9,7 +9,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function Home() {
-  const featuredProducts = products.slice(0, 5);
+  const featuredProducts = products.slice(0, 15);
 
   return (
     <main className="min-h-screen bg-green-50 text-green-900 selection:bg-green-200 selection:text-green-900">

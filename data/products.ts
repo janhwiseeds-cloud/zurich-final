@@ -200,5 +200,174 @@ export const products: Product[] = [
             "Safe to crops"
         ],
         image: "/larvinash.jpeg"
+    },
+    {
+        id: "10",
+        slug: "ratnil",
+        name: "Ratnil",
+        shortDescription: "Powerful rodenticide for effective rat control.",
+        category: "Pesticide",
+        description:
+            "Ratnil contains Zinc Phosphide 80% WP, specially formulated to control rats and rodents in agricultural fields, godowns, and storage areas.",
+        howToUse: [
+            "Prepare bait as per recommendation.",
+            "Place bait near rat burrows and pathways.",
+            "Avoid direct handling; use gloves."
+        ],
+        usageDetails: "10–20 g bait per location",
+        features: [
+            "Highly effective rodent control",
+            "Fast action",
+            "Suitable for field and storage use"
+        ],
+        image: "/ratnil.jpeg"
+    },
+    {
+        id: "11",
+        slug: "sakha",
+        name: "Sakha",
+        shortDescription: "Selective systemic herbicide for weed control in paddy.",
+        category: "Pesticide",
+        description:
+            "Sakha contains Pyrazosulfuron Ethyl 10% WP, a selective systemic herbicide effective against broadleaf weeds and sedges in transplanted rice.",
+        howToUse: [
+            "Mix recommended dose in water.",
+            "Spray uniformly on moist soil.",
+            "Apply within 3–5 days of transplanting."
+        ],
+        usageDetails: "20 g per acre",
+        features: [
+            "Selective weed control",
+            "Safe for paddy crop",
+            "Long-lasting effect"
+        ],
+        image: "/sakha.jpeg"
+    },
+    {
+        id: "12",
+        slug: "action-25",
+        name: "Action-25",
+        shortDescription: "Systemic insecticide for sucking pests.",
+        category: "Pesticide",
+        description:
+            "Action-25 contains Thiamethoxam 25% WG, providing effective control of aphids, jassids, thrips, and whiteflies in various crops.",
+        howToUse: [
+            "Dissolve in water as per dose.",
+            "Spray evenly on crop foliage.",
+            "Use at early pest infestation."
+        ],
+        usageDetails: "80–100 g per acre",
+        features: [
+            "Systemic action",
+            "Quick pest control",
+            "Low dose requirement"
+        ],
+        image: "/action-25.jpeg"
+    },
+    {
+        id: "13",
+        slug: "chloro-max",
+        name: "Chloro Max",
+        shortDescription: "Broad-spectrum insecticide for soil and foliar pests.",
+        category: "Pesticide",
+        description:
+            "Chloro Max contains Chlorpyriphos 10% GR, widely used for termite, root borer, and soil insect control in crops.",
+        howToUse: [
+            "Apply granules uniformly in soil.",
+            "Irrigate field after application.",
+            "Do not mix with water."
+        ],
+        usageDetails: "10 kg per acre",
+        features: [
+            "Effective soil insect control",
+            "Long residual action",
+            "Easy granular application"
+        ],
+        image: "/chloro-max.jpeg"
+    },
+    {
+        id: "14",
+        slug: "zaterra",
+        name: "Zaterra",
+        shortDescription: "Advanced insecticide for rice pests.",
+        category: "Pesticide",
+        description:
+            "Zaterra is formulated for effective control of major rice pests, providing strong protection and improved crop health.",
+        howToUse: [
+            "Mix with recommended water quantity.",
+            "Spray evenly on crop.",
+            "Repeat if pest pressure persists."
+        ],
+        usageDetails: "150–200 ml per acre",
+        features: [
+            "Effective against rice pests",
+            "Fast knockdown",
+            "Improves crop protection"
+        ],
+        image: "/zaterra.jpeg"
+    },
+    {
+        id: "15",
+        slug: "tika",
+        name: "Tika",
+        shortDescription: "Systemic and contact fungicide for disease control.",
+        category: "Pesticide",
+        description:
+            "Tika contains Carbendazim 12% + Mancozeb 63% WP, offering dual protection against fungal diseases in multiple crops.",
+        howToUse: [
+            "Mix required quantity in water.",
+            "Spray on affected crop parts.",
+            "Repeat at 10–12 day interval if needed."
+        ],
+        usageDetails: "500–600 g per acre",
+        features: [
+            "Systemic + contact action",
+            "Broad-spectrum disease control",
+            "Improves crop vigor"
+        ],
+        image: "/tika.jpeg"
+    },
+    {
+        id: "16",
+        slug: "cobra",
+        name: "Cobra",
+        shortDescription: "Contact insecticide for fast pest knockdown.",
+        category: "Pesticide",
+        description:
+            "Cobra contains Cypermethrin 0.25% DP, effective against caterpillars, borers, and other chewing insects.",
+        howToUse: [
+            "Dust uniformly on crop.",
+            "Apply during calm weather.",
+            "Avoid inhalation."
+        ],
+        usageDetails: "10–12 kg per acre",
+        features: [
+            "Quick knockdown action",
+            "Easy dust formulation",
+            "Cost-effective solution"
+        ],
+        image: "/cobra.jpeg"
+    },
+    {
+        id: "17",
+        slug: "tiger-3g",
+        name: "Tiger 3G",
+        shortDescription: "Granular insecticide for stem borer control.",
+        category: "Pesticide",
+        description:
+            "Tiger 3G contains Carbofuran 3% CG, effective for controlling stem borers and soil insects in crops like paddy and maize.",
+        howToUse: [
+            "Apply granules in standing water or soil.",
+            "Use at early crop stage.",
+            "Follow safety precautions."
+        ],
+        usageDetails: "10–15 kg per acre",
+        features: [
+            "Strong systemic action",
+            "Effective soil pest control",
+            "Long duration protection"
+        ],
+        image: "/tiger-3g.jpeg"
     }
+
 ];
