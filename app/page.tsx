@@ -53,12 +53,6 @@ export default function Home() {
             >
               Explore Products <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link
-              href="#contact"
-              className="px-10 py-5 bg-white hover:bg-green-50 text-green-900 text-lg font-bold rounded-full backdrop-blur-md border-2 border-green-100 transition-all shadow-lg hover:shadow-xl hover:border-green-200 transform hover:-translate-y-1"
-            >
-              Contact Us
-            </Link>
           </div>
         </div>
       </section>
