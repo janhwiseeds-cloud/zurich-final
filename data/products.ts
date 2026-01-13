@@ -289,22 +289,23 @@ export const products: Product[] = [
         id: "14",
         slug: "zaterra",
         name: "Zaterra",
-        shortDescription: "Advanced insecticide for rice pests.",
+        shortDescription: "Granular insecticide for effective control of rice stem borer and leaf folder.",
         category: "Pesticide",
         description:
-            "Zaterra is formulated for effective control of major rice pests, providing strong protection and improved crop health.",
+            "Zaterra contains Chlorantraniliprole 0.4% w/w GR, a modern anthranilic diamide insecticide that provides long-lasting control of stem borer, leaf folder, and other lepidopteran pests in paddy. It acts by causing muscle paralysis in insects, leading to quick feeding cessation and extended protection.",
         howToUse: [
-            "Mix with recommended water quantity.",
-            "Spray evenly on crop.",
-            "Repeat if pest pressure persists."
+            "Apply granules uniformly in standing water or moist soil.",
+            "Ensure proper water level in the field at the time of application.",
+            "Do not mix granules with water for spraying."
         ],
-        usageDetails: "150–200 ml per acre",
+        usageDetails: "4 kg per acre",
         features: [
-            "Effective against rice pests",
-            "Fast knockdown",
-            "Improves crop protection"
+            "Highly effective against stem borer and leaf folder",
+            "Long residual control",
+            "Low dose granular formulation",
+            "Safe to beneficial insects when used as recommended"
         ],
-        image: "/zaterra.jpeg"
+        image: "/zaterra.png"
     },
     {
         id: "15",
