@@ -235,7 +235,7 @@ export const products: Product[] = [
             "Spray uniformly on moist soil.",
             "Apply within 3–5 days of transplanting."
         ],
-        usageDetails: "20 g per acre",
+        usageDetails: "40 g per acre",
         features: [
             "Selective weed control",
             "Safe for paddy crop",
