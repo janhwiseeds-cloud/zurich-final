@@ -305,7 +305,7 @@ export const products: Product[] = [
             "Low dose granular formulation",
             "Safe to beneficial insects when used as recommended"
         ],
-        image: "/zaterra.png"
+        image: "/zaterra.jpeg"
     },
     {
         id: "15",

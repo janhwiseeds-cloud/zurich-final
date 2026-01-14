@@ -42,6 +42,9 @@ export default function ProductCard({ product, className }: ProductCardProps) {
                 <p className="text-green-800/60 text-sm mb-4 line-clamp-2">
                     {product.shortDescription}
                 </p>
+                <p className="text-green-800/60 text-sm mb-4 line-clamp-2">
+                    dose: {product.usageDetails}
+                </p>
 
                 <Link
                     href={`/products/${product.slug}`}
