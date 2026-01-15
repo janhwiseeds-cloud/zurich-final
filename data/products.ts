@@ -31,7 +31,7 @@ export const products: Product[] = [
             "Quick knockdown effect",
             "Long residual action"
         ],
-        image: "/master.jpeg"
+        image: "/masterbg.jpeg"
     },
 
     {
@@ -52,7 +52,7 @@ export const products: Product[] = [
             "Fast action",
             "Reliable performance"
         ],
-        image: "/protex.jpeg"
+        image: "/protexbg.jpeg"
     },
 
     {
@@ -73,7 +73,7 @@ export const products: Product[] = [
             "Low dose requirement",
             "Effective against sucking pests"
         ],
-        image: "/spot.jpeg"
+        image: "/spotbg.jpeg"
     },
 
     {
@@ -94,7 +94,7 @@ export const products: Product[] = [
             "Enhances nutrient uptake",
             "Supports higher yield"
         ],
-        image: "/zuripower.jpeg"
+        image: "/zuripowerbg.jpeg"
     },
 
     {
@@ -115,7 +115,7 @@ export const products: Product[] = [
             "Rainfastness improvement",
             "Enhanced chemical efficiency"
         ],
-        image: "/raindrop.jpeg"
+        image: "/raindropbg.jpeg"
     },
 
     {
@@ -136,7 +136,7 @@ export const products: Product[] = [
             "Pre-emergence action",
             "Improves crop establishment"
         ],
-        image: "/vinash.jpeg"
+        image: "/vinashbg.jpeg"
     },
 
     {
@@ -157,7 +157,7 @@ export const products: Product[] = [
             "Controls broad-leaf & grassy weeds",
             "Rainfast action"
         ],
-        image: "/allclean.jpeg"
+        image: "/allcleanbg.jpeg"
     },
 
     {
@@ -369,6 +369,27 @@ export const products: Product[] = [
             "Long duration protection"
         ],
         image: "/tiger-3g.jpeg"
+    }, {
+        id: "19",
+        slug: "soldier-24d-amine",
+        name: "Soldier",
+        shortDescription: "Selective systemic herbicide for broad-leaf weed control.",
+        category: "Pesticide",
+        description:
+            "Soldier (2,4-D Amine Salt 58% SL) is a selective post-emergence herbicide effective against broad-leaf weeds in cereal crops. It works by disrupting weed growth hormones, leading to quick wilting and death.",
+        howToUse: [
+            "Mix 2–3 ml per liter of water.",
+            "Spray uniformly on actively growing weeds.",
+            "Avoid spray drift on nearby sensitive crops."
+        ],
+        usageDetails: "400–500 ml per acre",
+        features: [
+            "Selective action on broad-leaf weeds",
+            "Systemic herbicide with quick results",
+            "Safe for cereal crops when used as directed"
+        ],
+        image: "/soldier.jpeg"
     }
+
 
 ];
