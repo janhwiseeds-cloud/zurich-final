@@ -9,7 +9,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function Home() {
-  const featuredProducts = products
+  const featuredProducts = products;
   return (
     <main className="min-h-screen bg-green-50 text-green-900 selection:bg-green-200 selection:text-green-900">
       <Navbar />
@@ -25,7 +25,7 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <div className="mb-8 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/60 border border-green-200 backdrop-blur-xl shadow-lg shadow-green-900/5">
+          <div className="my-8 mt-16 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/60 border border-green-200 backdrop-blur-xl shadow-lg shadow-green-900/5">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
