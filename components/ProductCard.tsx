@@ -13,14 +13,14 @@ export default function ProductCard({ product, className }: ProductCardProps) {
     return (
         <div className={cn("group relative bg-white border border-green-100 rounded-2xl overflow-hidden hover:border-green-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-green-900/5", className)}>
             {/* Image Container */}
-            <div className="h-56 w-full bg-white relative overflow-hidden flex items-center justify-center p-4">
+            <div className="h-72 md:h-56 w-full bg-white relative overflow-hidden flex items-center justify-center p-0 md:p-4">
                 {product.image ? (
                     <div className="relative w-full h-full">
                         <Image
                             src={product.image}
                             alt={product.name}
                             fill
-                            className="object-contain group-hover:scale-105 transition-transform duration-500"
+                            className="object-cover md:object-contain group-hover:scale-105 transition-transform duration-500"
                         />
                     </div>
                 ) : (
