@@ -28,7 +28,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
     const activeColor = borderColors[colorIndex];
 
     return (
-        <div className={cn("group relative rounded-2xl overflow-hidden p-[2px] hover:shadow-xl hover:shadow-green-900/5 transition-all duration-300", className)}>
+        <div className={cn("group relative rounded-2xl overflow-hidden p-[2px] max-md:shadow-md hover:shadow-xl hover:shadow-green-900/5 transition-all duration-300", className)}>
             {/* Animated Border Background */}
             {/* We use inline styles for the dynamic gradient color to ensure it shines brightly */}
             <div
