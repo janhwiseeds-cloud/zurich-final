@@ -55,3 +55,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes pump {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(22, 163, 74, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
+}
+
+.animate-pump {
+  animation: pump 2s infinite;
+}
+
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-shine {
+  background-size: 200% 200%;
+  animation: shine 3s linear infinite;
+}

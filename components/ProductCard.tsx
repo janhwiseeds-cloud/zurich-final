@@ -9,37 +9,20 @@ interface ProductCardProps {
     className?: string;
 }
 
-// Define an array of intense/neon colors for the border
-const borderColors = [
-    "#16a34a", // Green (Default)
-    "#ef4444", // Red
-    "#3b82f6", // Blue
-    "#a855f7", // Purple
-    "#f59e0b", // Amber/Orange
-    "#ec4899", // Pink
-    "#06b6d4", // Cyan
-    "#eab308", // Yellow
-];
-
 export default function ProductCard({ product, className }: ProductCardProps) {
-    // Deterministically select a color based on the product ID
-    // We use a simple hash of the ID to pick an index
-    const colorIndex = product.id.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0) % borderColors.length;
-    const activeColor = borderColors[colorIndex];
-
     return (
-        <div className={cn("group relative rounded-2xl overflow-hidden p-[2px] max-md:shadow-md hover:shadow-xl hover:shadow-green-900/5 transition-all duration-300", className)}>
-            {/* Animated Border Background */}
-            {/* We use inline styles for the dynamic gradient color to ensure it shines brightly */}
-            <div
-                className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] opacity-100"
-                style={{
-                    background: `conic-gradient(from 90deg at 50% 50%, #0000 0%, ${activeColor} 50%, #0000 100%)`
-                }}
-            />
+        <div className={cn(
+            "group relative flex flex-col w-full bg-white rounded-2xl transition-all duration-300",
+            className
+        )}>
+            {/* Colorful Animated Shine Shadow */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-green-600 via-emerald-400 to-green-600 rounded-2xl blur opacity-65 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse" />
 
-            {/* Content Container (Masks the border) */}
-            <div className="relative h-full w-full bg-white rounded-[14px] overflow-hidden flex flex-col">
+            <div className={cn(
+                "relative flex flex-col w-full bg-white rounded-2xl overflow-hidden h-full",
+                "border border-green-100", // Subtle border
+                "shadow-md group-hover:shadow-xl", // Base shadows
+            )}>
                 {/* Image Container */}
                 {/* Mobile: h-64 (intermediate size), Desktop: h-56 */}
                 {/* Mobile: p-2 (small padding to prevent edge touching), Desktop: p-4 */}
@@ -91,3 +74,5 @@ export default function ProductCard({ product, className }: ProductCardProps) {
         </div>
     );
 }
+
+
