@@ -2,13 +2,14 @@
 
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
-import { reviews } from "@/data/reviews";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import LandingHero from "@/components/LandingHero";
 import Review from "@/components/Review";
+import LandingReview from "@/components/LandingReview";
 
 export default function Home() {
+   
     const featuredProducts = products.slice(0, 6); // Show only the first 6 products as featured
     return (
         <main className="mx-auto w-full bg-green-600/10 min-h-screen">
@@ -17,6 +18,7 @@ export default function Home() {
                 <Review extraClass="mt-10" text="Master Blaster 505 cleared my field of pests in just one spray. The knockdown effect is immediate, and my cauliflower crop is finally healthy." name="Rajesh Kumar" rating={5} />
                
                 <section className="p-8 max-w-7xl mx-auto mt-8">
+                     <h2 className="text-3xl font-bold mb-4 text-center">Products</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {featuredProducts.map((product) => (
                             <ProductCard key={product.id} product={product} />
@@ -28,7 +30,7 @@ export default function Home() {
                         </Link>
                     </div>
                 </section>
-
+                <LandingReview />
             </div>
         </main>
     );

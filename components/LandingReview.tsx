@@ -1,10 +1,8 @@
-export interface Review {
-    text: string;
-    name: string;
-    rating: number;
-}
 
-export const reviews: Review[] = [
+import Review from "@/components/Review";
+
+export default function LandingReview() {
+     const reviewsLanding = [
     {
         text: "Master Blaster 505 cleared my field of pests in just one spray. The knockdown effect is immediate, and my cauliflower crop is finally healthy.",
         name: "Rajesh Kumar",
@@ -26,3 +24,14 @@ export const reviews: Review[] = [
         rating: 5,
     }
 ];
+    return (
+         <section id="reviews" className="p-8 max-w-7xl mx-auto mt-8">
+                            <h2 className="text-3xl font-bold mb-4 text-center">Customer Reviews</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                                {reviewsLanding.map((review, index) => (
+                                    <Review key={index} text={review.text} name={review.name} rating={review.rating} />
+                                ))}
+                            </div>
+                        </section>
+    )
+};
