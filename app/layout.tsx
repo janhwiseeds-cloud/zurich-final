@@ -3,6 +3,7 @@ import { Gabarito } from "next/font/google"; // Premium, modern font
 import "./globals.css";
 import { cn } from "../lib/utils";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const gabarito = Gabarito({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className="min-h-full scroll-smooth flex flex-col pt-16">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
