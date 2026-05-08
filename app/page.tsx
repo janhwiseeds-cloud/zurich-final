@@ -1,6 +1,5 @@
 "use client";
 
-import ReviewCard from "@/components/ReviewCard";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { reviews } from "@/data/reviews";
@@ -29,6 +28,7 @@ export default function Home() {
                         </Link>
                     </div>
                 </section>
+
             </div>
         </main>
     );
