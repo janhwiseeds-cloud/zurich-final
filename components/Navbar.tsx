@@ -29,7 +29,7 @@ export default function Navbar() {
                                        width={30}
                                        height={30}
                                    />
-                                   <p className="uppercase font-semibold text-2xl">Zurich <span className="text-green-700">Agroscience</span></p>
+                                   <p className="uppercase font-semibold text-2xl max-md:text-xl">Zurich <span className="text-green-700">Agroscience</span></p>
                                </div>
                                <div className="">
                                    <MenuIcon

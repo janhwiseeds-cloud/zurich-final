@@ -13,7 +13,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
     return (
         <div
             className={cn(
-                "group bg-white border outline-4 outline-green-700/100 border-green-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1",
+                "group bg-emerald-200 border outline-4 outline-green-700/100 border-green-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1",
                 className
             )}
         >
@@ -34,7 +34,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
             </div>
 
             {/* Content */}
-            <div className="p-6 flex flex-col">
+            <div className="p-6 flex flex-col items-center justify-center">
                 {/* Category */}
                 <div className="mb-3">
                     <span className="text-[11px] font-semibold bg-green-700 text-white px-3 py-1 rounded-full">
@@ -43,19 +43,19 @@ export default function ProductCard({ product, className }: ProductCardProps) {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-green-950 mb-3 leading-tight group-hover:text-green-700 transition-colors">
+                <h3 className="text-3xl text-center font-bold text-green-950 leading-tight group-hover:text-green-700 transition-colors">
                     {product.name}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-green-900/70 leading-relaxed mb-4 line-clamp-3">
+                <p className="text-sm text-center text-green-900/70 leading-relaxed mb-4 line-clamp-3">
                     {product.shortDescription}
                 </p>
-                    <p className="text-green-800/60 text-sm mb-4 line-clamp-2">
-                        dose: {product.usageDetails}
+                    <p className="text-green-800 md:text-sm text-xl line-clamp-2">
+                        dose: <span className="text-xl md:text-sm bg-green-800 p-2 text-white">{product.usageDetails}</span>
                     </p>
 
-                    <div className="mt-4">
+                    <div className="text-center mt-2">
                         <Link
                             href={`/products/${product.slug}`}
                             className="inline-flex items-center text-sm font-bold text-green-700 hover:text-green-600 transition-colors gap-2"
