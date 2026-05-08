@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MenuIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
@@ -19,79 +19,25 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav
-            className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                isScrolled
-                    ? "bg-white/80 backdrop-blur-md border-b border-green-100 py-4 shadow-sm"
-                    : "bg-transparent py-6"
-            )}
-        >
-            <div className="container mx-auto px-6 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="p-1.5 rounded-lg group-hover:bg-green-500 transition-colors">
-                        <Image
-                            src="/LOGO.png"
-                            alt="Logo"
-                            width={32}
-                            height={32}
-                            className="w-8 h-8"
-                        />
-                    </div>
-                    <span className="text-xl font-bold tracking-tight text-green-900">
-                        ZURICH <span className="text-green-600">AGROSCIENCE</span>
-                    </span>
-                </Link>
-
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
-                    <Link href="/" className="text-sm font-medium text-green-900/70 hover:text-green-600 transition-colors">
-                        Home
-                    </Link>
-                    <Link href="/products" className="text-sm font-medium text-green-900/70 hover:text-green-600 transition-colors">
-                        Products
-                    </Link>
-                    <Link href="#reviews" className="text-sm font-medium text-green-900/70 hover:text-green-600 transition-colors">
-                        Reviews
-                    </Link>
-
-                </div>
-
-                {/* Mobile Toggle */}
-                <button
-                    className="md:hidden text-neutral-300"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    {isOpen ? <X /> : <Menu />}
-                </button>
-            </div>
-
-            {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 bg-neutral-950 border-b border-white/10 p-6 flex flex-col gap-4 shadow-2xl">
-                    <Link
-                        href="/"
-                        className="text-lg font-medium text-neutral-300 hover:text-green-400"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Home
-                    </Link>
-                    <Link
-                        href="/products"
-                        className="text-lg font-medium text-neutral-300 hover:text-green-400"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Products
-                    </Link>
-                    <Link
-                        href="#reviews"
-                        className="text-lg font-medium text-neutral-300 hover:text-green-400"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Reviews
-                    </Link>
-                </div>
-            )}
-        </nav>
+        <section className="w-screen h-auto relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-green-200 ">
+                       <div className="max-w-2xl mx-auto px-4 ">
+                           <div className="w-full h-16 flex items-center justify-between p-4">
+                               <div className="flex items-center gap-1">
+                                   <Image 
+                                       src="/zurichlogo.png"
+                                       alt="Zurich Agroscience"
+                                       width={30}
+                                       height={30}
+                                   />
+                                   <p className="uppercase font-semibold text-2xl">Zurich <span className="text-green-700">Agroscience</span></p>
+                               </div>
+                               <div className="">
+                                   <MenuIcon
+                                       size={25} />
+                               </div>
+                           </div>
+                       </div>
+                   </section>
+       
     );
 }
