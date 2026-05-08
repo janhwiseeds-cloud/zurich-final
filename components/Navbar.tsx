@@ -24,7 +24,7 @@ export default function Navbar() {
     };
 
     return (
-        <section className="fixed top-0 z-50 border-b-3 border-black  h-auto left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-green-200">
+        <section className="fixed top-0 z-50 border-b-2 border-black  h-auto left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-green-200">
             <div className="max-w-5xl mx-auto px-4 ">
                 <div className="w-full py-3 flex items-center justify-between">
                     {/* Logo & App Name */}
@@ -49,10 +49,10 @@ export default function Navbar() {
                                 key={link.href}
                                 href={link.href}
                                 className={cn(
-                                    "px-4 py-2 rounded-lg font-semibold transition-colors",
+                                    "px-4 py-2 rounded-lg text-black font-semibold transition-colors",
                                     isActive(link.href)
-                                        ? "text-black bg-white"
-                                        : "text-green-950 hover:text-green-700"
+                                        ? "bg-white"
+                                        : " hover:text-green-700"
                                 )}
                             >
                                 {link.label}
