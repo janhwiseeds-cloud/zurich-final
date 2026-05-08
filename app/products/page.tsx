@@ -2,17 +2,19 @@
 
 import Navbar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
+import SearchBar from "@/components/SearchBar";
 import { products } from "@/data/products";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 export default function ProductsPage() {
     const [filter, setFilter] = useState("All");
+    const [searchQuery, setSearchQuery] = useState("");
     const categories = ["All", "Pesticide", "Insecticide", "Herbicide", "Fungicide", "Growth Promoter", "Plant Growth Regulator"];
 
-    const filteredProducts = filter === "All"
-        ? products
-        : products.filter(p => p.category === filter);
+    const filteredProducts = products
+        .filter(p => filter === "All" || p.category === filter)
+        .filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
     return (
         <main className="min-h-screen w-full">
@@ -30,6 +32,12 @@ export default function ProductsPage() {
             {/* Filter & Grid */}
             <section className="p-6">
                 <div className="max-w-7xl mx-auto">
+
+                    {/* Search Bar */}
+                    <SearchBar 
+                        onSearch={setSearchQuery} 
+                        placeholder="Search products by name..."
+                    />
 
                     {/* Filter Tabs */}
                     <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
