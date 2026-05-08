@@ -25,7 +25,7 @@ export default function LandingReview() {
     }
 ];
     return (
-         <section id="reviews" className="p-8 max-w-7xl mx-auto mt-8">
+         <section id="reviews" className="p-8 max-w-7xl mx-auto my-10">
                             <h2 className="text-3xl font-bold mb-4 text-center">Customer Reviews</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
                                 {reviewsLanding.map((review, index) => (

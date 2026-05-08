@@ -11,6 +11,8 @@ import LandingReview from "@/components/LandingReview";
 export default function Home() {
    
     const featuredProducts = products.slice(0, 6); // Show only the first 6 products as featured
+
+    const last9Products = products.slice(-9); // Get the last 9 products for the "New Arrivals" section
     return (
         <main className="mx-auto w-full bg-green-600/10 min-h-screen">
             <div className="max-w-5xl mx-auto">
@@ -31,6 +33,14 @@ export default function Home() {
                     </div>
                 </section>
                 <LandingReview />
+
+
+
+                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
+                        {last9Products.map((product) => (
+                            <ProductCard key={product.id} product={product} />
+                        ))}
+                    </div>
             </div>
         </main>
     );
