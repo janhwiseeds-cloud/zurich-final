@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Gabarito } from "next/font/google";
 import "./globals.css";
 import { cn } from "../lib/utils";
@@ -12,6 +12,12 @@ const gabarito = Gabarito({
   weight: ["400", "500", "600", "700", "900"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   ...generateMetadataConfig({
     title: "Premium Agriculture Solutions",
@@ -20,11 +26,6 @@ export const metadata: Metadata = {
   }),
   keywords: siteConfig.keywords,
   metadataBase: new URL(siteConfig.url),
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
   icons: {
     icon: "/zurichlogo.png",
     apple: "/zurichlogo.png",

@@ -66,7 +66,7 @@ export function ProductSchema({ name, description, image, category, slug }: {
   );
 }
 
-export function BreadcrumbSchema(items: Array<{ name: string; url: string }>) {
+export function BreadcrumbSchema({ items }: { items: Array<{ name: string; url: string }> }) {
   return (
     <StructuredData
       type="BreadcrumbList"
