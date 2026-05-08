@@ -22,15 +22,17 @@ export default function Navbar() {
         <section className="w-screen h-auto relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-green-200 ">
                        <div className="max-w-2xl mx-auto px-4 ">
                            <div className="w-full h-16 flex items-center justify-between p-4">
-                               <div className="flex items-center gap-1">
-                                   <Image 
-                                       src="/zurichlogo.png"
-                                       alt="Zurich Agroscience"
-                                       width={30}
-                                       height={30}
-                                   />
-                                   <p className="uppercase font-semibold text-2xl max-md:text-xl">Zurich <span className="text-green-700">Agroscience</span></p>
-                               </div>
+                               <Link href={"/"}>
+                                   <div className="flex items-center gap-1">
+                                       <Image
+                                           src="/zurichlogo.png"
+                                           alt="Zurich Agroscience"
+                                           width={30}
+                                           height={30}
+                                       />
+                                       <p className="uppercase font-semibold text-2xl max-md:text-xl">Zurich <span className="text-green-700 font-bold">Agroscience</span></p>
+                                   </div>
+                               </Link>
                                <div className="">
                                    <MenuIcon
                                        size={25} />

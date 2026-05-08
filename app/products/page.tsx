@@ -15,8 +15,7 @@ export default function ProductsPage() {
         : products.filter(p => p.category === filter);
 
     return (
-        <main className="min-h-screen bg-green-50 text-green-900 selection:bg-green-200 selection:text-green-900">
-            <Navbar />
+        <main className="min-h-screen max-w-5xl mx-auto text-green-900 selection:bg-green-200 selection:text-green-900">
 
             {/* Header */}
             <section className="pt-32 pb-12 px-6 bg-white border-b border-green-100">
