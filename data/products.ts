@@ -3,7 +3,7 @@ export interface Product {
     slug: string;
     name: string;
     shortDescription: string;
-    category: "Pesticide" | "Fertilizer" | "Growth Promoter";
+  category: string;
     description: string;
     howToUse: string[];
     usageDetails: string;
@@ -390,6 +390,270 @@ export const products: Product[] = [
         ],
         image: "/soldier.jpeg"
     }
+    ,
+  {
+    id: "20",
+    slug: "massage-70-ws",
+    name: "Massage 70 WS",
+    shortDescription: "Systemic insecticide for seed treatment protection.",
+    category: "Insecticide",
+    description:
+      "Massage 70 WS contains Imidacloprid 70% WS, a systemic insecticide used for seed treatment to protect crops from sucking pests during early growth stages.",
+    howToUse: [
+      "Mix recommended quantity with seeds before sowing.",
+      "Coat seeds uniformly and allow them to dry in shade.",
+      "Use treated seeds within recommended time."
+    ],
+    usageDetails: "5–10 g per kg seed",
+    features: [
+      "Effective seed treatment insecticide",
+      "Provides early-stage pest protection",
+      "Systemic action with long-lasting control"
+    ],
+    image: "/massage.jpeg"
+  },
+  {
+    id: "21",
+    slug: "soldier-24d-amine",
+    name: "Soldier",
+    shortDescription: "Selective herbicide for broad-leaf weed control.",
+    category: "Herbicide",
+    description:
+      "Soldier contains 2,4-D Amine Salt 58% SL, a selective systemic herbicide used for post-emergence control of broad-leaf weeds in cereal and field crops.",
+    howToUse: [
+      "Mix with water as recommended.",
+      "Spray uniformly on actively growing weeds.",
+      "Avoid drift to sensitive crops."
+    ],
+    usageDetails: "400–500 ml per acre",
+    features: [
+      "Selective action on broad-leaf weeds",
+      "Systemic herbicide with quick control",
+      "Suitable for cereal crops"
+    ],
+    image: "/soldier.jpeg"
+  },
+
+  {
+    id: "22",
+    slug: "abarich-abamectin",
+    name: "Abarich",
+    shortDescription: "Powerful insecticide and acaricide for mite and pest control.",
+    category: "Insecticide",
+    description:
+      "Abarich contains Abamectin 1.9% EC, effective against mites, leaf miners, thrips, and other sucking pests through contact and stomach action.",
+    howToUse: [
+      "Dilute recommended quantity in water.",
+      "Spray thoroughly on both sides of leaves.",
+      "Apply during early pest infestation."
+    ],
+    usageDetails: "150–250 ml per acre",
+    features: [
+      "Controls mites and sucking pests",
+      "Translaminar movement for better protection",
+      "Fast knockdown action"
+    ],
+    image: "/abarich.jpeg"
+  },
+
+  {
+    id: "23",
+    slug: "azo-star",
+    name: "Azo-Star",
+    shortDescription: "Broad-spectrum systemic fungicide for disease control.",
+    category: "Fungicide",
+    description:
+      "Azo-Star contains Azoxystrobin 18.2% + Difenoconazole 11.4% SC, a dual-action fungicide used to control fungal diseases in various crops.",
+    howToUse: [
+      "Mix recommended dose in water.",
+      "Spray evenly on crop foliage.",
+      "Repeat based on disease severity."
+    ],
+    usageDetails: "300–400 ml per acre",
+    features: [
+      "Broad-spectrum fungal protection",
+      "Preventive and curative action",
+      "Improves crop health"
+    ],
+    image: "/azo-star.jpeg"
+  },
+
+  {
+    id: "24",
+    slug: "delta-guard",
+    name: "Delta Guard",
+    shortDescription: "Fast-acting insecticide for chewing and sucking pests.",
+    category: "Insecticide",
+    description:
+      "Delta Guard contains Deltamethrin 2.8% EC, a pyrethroid insecticide effective against a wide range of crop pests with quick knockdown action.",
+    howToUse: [
+      "Dilute with clean water.",
+      "Spray uniformly on affected crops.",
+      "Use during early pest attack."
+    ],
+    usageDetails: "200–300 ml per acre",
+    features: [
+      "Quick knockdown effect",
+      "Broad-spectrum pest control",
+      "Effective at low dosage"
+    ],
+    image: "/delta-guard.jpeg"
+  },
+
+  {
+    id: "25",
+    slug: "richstar-bifenthrin",
+    name: "RichStar",
+    shortDescription: "Broad-spectrum insecticide for effective pest management.",
+    category: "Insecticide",
+    description:
+      "RichStar contains Bifenthrin 10% EC, a synthetic pyrethroid insecticide used to control sucking and chewing pests in multiple crops.",
+    howToUse: [
+      "Mix in recommended quantity with water.",
+      "Spray evenly across crop canopy.",
+      "Apply during active pest infestation."
+    ],
+    usageDetails: "250–300 ml per acre",
+    features: [
+      "Long residual control",
+      "Controls multiple pests",
+      "Fast contact action"
+    ],
+    image: "/richstar.jpeg"
+  },
+
+  {
+    id: "26",
+    slug: "hexagon",
+    name: "Hexagon",
+    shortDescription: "Systemic fungicide for fungal disease management.",
+    category: "Fungicide",
+    description:
+      "Hexagon contains Hexaconazole 5% SC, a systemic fungicide effective against sheath blight, powdery mildew, rust, and other fungal diseases.",
+    howToUse: [
+      "Mix recommended dose in water.",
+      "Spray evenly on infected crops.",
+      "Repeat application if required."
+    ],
+    usageDetails: "200–300 ml per acre",
+    features: [
+      "Systemic disease protection",
+      "Effective against major fungal diseases",
+      "Long-lasting action"
+    ],
+    image: "/hexagon.jpeg"
+  },
+
+  {
+    id: "27",
+    slug: "gibbar",
+    name: "Gibbar",
+    shortDescription: "Plant growth regulator for improved crop growth.",
+    category: "Plant Growth Regulator",
+    description:
+      "Gibbar contains Gibberellic Acid 0.001% L, a plant growth regulator used to enhance plant growth, flowering, and crop yield.",
+    howToUse: [
+      "Dilute with water before spraying.",
+      "Spray during active growth stage.",
+      "Avoid over-application."
+    ],
+    usageDetails: "200–250 ml per acre",
+    features: [
+      "Promotes plant growth",
+      "Enhances flowering and fruit setting",
+      "Improves crop vigor"
+    ],
+    image: "/gibbar.jpeg"
+  },
+
+  {
+    id: "28",
+    slug: "roxyfen",
+    name: "Roxyfen",
+    shortDescription: "Insecticide for effective control of whiteflies and sucking pests.",
+    category: "Insecticide",
+    description:
+      "Roxyfen contains Pyriproxyfen 10% EC, an insect growth regulator effective against whiteflies, aphids, and other sucking pests.",
+    howToUse: [
+      "Mix recommended quantity with water.",
+      "Spray on affected crop area.",
+      "Use during early pest stages."
+    ],
+    usageDetails: "300–400 ml per acre",
+    features: [
+      "Controls immature pest stages",
+      "Effective insect growth regulator",
+      "Long residual activity"
+    ],
+    image: "/roxyfen.jpeg"
+  },
+
+  {
+    id: "29",
+    slug: "perfect-thiamethoxam",
+    name: "Perfect",
+    shortDescription: "Systemic insecticide for sucking pest management.",
+    category: "Insecticide",
+    description:
+      "Perfect contains Thiamethoxam 30% FS, a systemic insecticide used mainly for seed treatment and protection against sucking pests.",
+    howToUse: [
+      "Treat seeds uniformly before sowing.",
+      "Allow treated seeds to dry before use.",
+      "Follow crop-specific dosage recommendations."
+    ],
+    usageDetails: "8–10 ml per kg seed",
+    features: [
+      "Excellent seed treatment solution",
+      "Long-lasting systemic protection",
+      "Controls sucking pests effectively"
+    ],
+    image: "/perfect.jpeg"
+  },
+
+  {
+    id: "30",
+    slug: "ema-nova",
+    name: "EMA NOVA",
+    shortDescription: "Advanced insecticide for caterpillar and larval pest control.",
+    category: "Insecticide",
+    description:
+      "EMA NOVA contains Novaluron 5.25% + Emamectin Benzoate 0.9% SC, providing dual-action control against caterpillars and lepidopteran pests.",
+    howToUse: [
+      "Dilute in recommended amount of water.",
+      "Spray thoroughly on crop foliage.",
+      "Apply during early larval stage."
+    ],
+    usageDetails: "200–250 ml per acre",
+    features: [
+      "Dual-action insecticide formula",
+      "Effective against caterpillars",
+      "Long residual control"
+    ],
+    image: "/ema-nova.jpeg"
+  },
+
+  {
+    id: "31",
+    slug: "klaasen",
+    name: "Klaasen",
+    shortDescription: "Selective herbicide for weed management in crops.",
+    category: "Herbicide",
+    description:
+      "Klaasen contains Mesotrione 2.27% + Atrazine 22.7% SC, a selective herbicide used for pre and post-emergence weed control.",
+    howToUse: [
+      "Mix with recommended quantity of water.",
+      "Spray evenly on field surface.",
+      "Apply at early weed growth stage."
+    ],
+    usageDetails: "800–1000 ml per acre",
+    features: [
+      "Controls broadleaf and grassy weeds",
+      "Selective herbicide action",
+      "Suitable for maize crops"
+    ],
+    image: "/klaasen.jpeg"
+  }
+
 
 
 ];
