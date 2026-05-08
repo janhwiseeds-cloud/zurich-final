@@ -27,9 +27,11 @@ export default function Home() {
                         ))}
                     </div>
                     <div className=" flex justify-center mt-8">
-                        <Link href="/products" className="flex items-center justify-center text-center gap-2 text-green-800 font-bold hover:text-green-700 transition-colors duration-300">
-                            View All Products <ArrowRight className="w-5 h-5" />
-                        </Link>
+                        <Link href="/products">
+                        <button className={`group outline-2 btn rounded-lg py-5.5 px-15 bg-linear-to-r from-emerald-500 bg-green-700  hover:bg-emerald-800  transtion-all duration-200 font-semibold text-white flex`}>
+                            View All Products <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-leaf-icon lucide-leaf size-4 transition-transform rotate-90 duration-300 group-hover:translate-x-1  group-hover:rotate-110"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" /><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" /></svg>
+                        </button>
+                    </Link>
                     </div>
                 </section>
                 <LandingReview />

@@ -14,7 +14,7 @@ export default function Footer() {
     ];
 
     return (
-        <section className="w-screen h-auto relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-linear-to-r from-green-100 bg-emerald-300 border-t-2 border-black">
+        <section className="w-screen h-auto relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-linear-to-r  from-green-200 to-green-500 border-t-2 border-black">
             <div className="max-w-5xl mx-auto px-4">
                 <div className="w-full py-8 flex flex-col md:flex-row items-center justify-between gap-6">
                     {/* Logo & App Name */}

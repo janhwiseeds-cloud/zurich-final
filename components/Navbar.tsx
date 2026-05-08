@@ -34,7 +34,7 @@ export default function Navbar() {
     };
 
     return (
-        <section className="fixed top-0 z-50 border-b-2 border-black  h-auto left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-linear-to-r from-green-100 bg-emerald-300 ">
+        <section className="fixed top-0 z-50 border-b-2 border-black  h-auto left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-linear-to-r from-green-200 to-green-500 ">
             <div className="max-w-5xl mx-auto px-4 ">
                 <div className="w-full py-3 flex items-center justify-between">
                     {/* Logo & App Name */}
