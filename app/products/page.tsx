@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 export default function ProductsPage() {
     const [filter, setFilter] = useState("All");
-    const categories = ["All", "Pesticide", "Fertilizer", "Growth Promoter"];
+    const categories = ["All", "Pesticide", "Insecticide", "Herbicide", "Fungicide", "Growth Promoter", "Plant Growth Regulator"];
 
     const filteredProducts = filter === "All"
         ? products
