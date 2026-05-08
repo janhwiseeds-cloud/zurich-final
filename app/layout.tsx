@@ -1,19 +1,43 @@
 import type { Metadata } from "next";
-import { Gabarito } from "next/font/google"; // Premium, modern font
+import { Gabarito } from "next/font/google";
 import "./globals.css";
 import { cn } from "../lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { generateMetadataConfig, siteConfig } from "@/lib/seo";
+import { OrganizationSchema } from "@/components/StructuredData";
 
 const gabarito = Gabarito({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "900"],
 });
 
-
 export const metadata: Metadata = {
-  title: "Zurich Agroscience | Premium Agriculture Solutions",
-  description: "Advanced fertilizers and pesticides for modern farming. Empowering farmers with science-backed solutions.",
+  ...generateMetadataConfig({
+    title: "Premium Agriculture Solutions",
+    description: siteConfig.description,
+    url: siteConfig.url,
+  }),
+  keywords: siteConfig.keywords,
+  metadataBase: new URL(siteConfig.url),
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
+  icons: {
+    icon: "/zurichlogo.png",
+    apple: "/zurichlogo.png",
+  },
+  manifest: "/site.webmanifest",
+  authors: [
+    {
+      name: "Zurich Agroscience Pvt Ltd",
+      url: siteConfig.url,
+    },
+  ],
+  creator: "Zurich Agroscience",
+  publisher: "Zurich Agroscience Pvt Ltd",
 };
 
 export default function RootLayout({
@@ -26,6 +50,11 @@ export default function RootLayout({
       lang="en"
       className={`${gabarito.className} h-full antialiased scroll-smooth`}
     >
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <OrganizationSchema />
+      </head>
       <body className="min-h-full scroll-smooth flex flex-col pt-16">
         <Navbar />
         {children}

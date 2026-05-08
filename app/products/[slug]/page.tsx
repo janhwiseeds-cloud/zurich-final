@@ -3,12 +3,59 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { Metadata } from "next";
+import { siteConfig } from "@/lib/seo";
+import { ProductSchema, BreadcrumbSchema } from "@/components/StructuredData";
 
 // Generate static params for all products
 export async function generateStaticParams() {
     return products.map((product) => ({
         slug: product.slug,
     }));
+}
+
+// Generate dynamic metadata for each product
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const product = products.find((p) => p.slug === slug);
+
+    if (!product) {
+        return {
+            title: "Product Not Found",
+            description: "The product you're looking for doesn't exist.",
+        };
+    }
+
+    const url = `${siteConfig.url}/products/${product.slug}`;
+
+    return {
+        title: `${product.name} | Zurich Agroscience`,
+        description: product.description,
+        keywords: [product.name, product.category, "agriculture", "crop protection", ...siteConfig.keywords],
+        openGraph: {
+            title: `${product.name} | Zurich Agroscience`,
+            description: product.description,
+            url,
+            type: "website",
+            images: [
+                {
+                    url: product.image || siteConfig.ogImage,
+                    width: 1200,
+                    height: 630,
+                    alt: product.name,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${product.name} | Zurich Agroscience`,
+            description: product.description,
+            images: [product.image || siteConfig.ogImage],
+        },
+        alternates: {
+            canonical: url,
+        },
+    };
 }
 
 export default async function ProductDetail({ params }: { params: Promise<{ slug: string }> }) {
@@ -25,6 +72,12 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
 
     return (
         <main className="min-h-screen bg-green-50 text-green-900 selection:bg-green-200 selection:text-green-900">
+            <ProductSchema name={product.name} description={product.description} image={product.image} category={product.category} slug={product.slug} />
+            <BreadcrumbSchema items={[
+                { name: "Home", url: siteConfig.url },
+                { name: "Products", url: `${siteConfig.url}/products` },
+                { name: product.name, url: `${siteConfig.url}/products/${product.slug}` }
+            ]} />
             <Navbar />
 
             <section className="pt-32 pb-20 px-6">

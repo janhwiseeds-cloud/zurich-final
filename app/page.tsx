@@ -1,5 +1,4 @@
-"use client";
-
+import { Metadata } from "next";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 import Link from "next/link";
@@ -7,6 +6,17 @@ import { ArrowRight } from "lucide-react";
 import LandingHero from "@/components/LandingHero";
 import Review from "@/components/Review";
 import LandingReview from "@/components/LandingReview";
+import { generateMetadataConfig, siteConfig } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  ...generateMetadataConfig({
+    title: "Premium Agriculture Solutions | Zurich Agroscience",
+    description: "Discover advanced pesticides, insecticides, herbicides, fungicides, and plant growth regulators. Zurich Agroscience provides science-backed solutions for modern farming.",
+    url: siteConfig.url,
+    type: "website",
+  }),
+  keywords: [...siteConfig.keywords, "crop protection solutions", "agricultural products", "farming chemicals"],
+};
 
 export default function Home() {
    
