@@ -33,14 +33,8 @@ export default function ProductsPage() {
             <section className="p-6">
                 <div className="max-w-7xl mx-auto">
 
-                    {/* Search Bar */}
-                    <SearchBar 
-                        onSearch={setSearchQuery} 
-                        placeholder="Search products by name..."
-                    />
-
                     {/* Filter Tabs */}
-                    <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+                    <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
                         {categories.map((cat) => (
                             <button
                                 key={cat}
@@ -56,6 +50,13 @@ export default function ProductsPage() {
                             </button>
                         ))}
                     </div>
+
+                    {/* Search Bar */}
+                    <SearchBar 
+                        onSearch={setSearchQuery} 
+                        placeholder="Search products by name..."
+                    />
+
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
                         {filteredProducts.map((product) => (
