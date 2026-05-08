@@ -24,17 +24,17 @@ export default function Navbar() {
     };
 
     return (
-        <section className="w-screen h-auto relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-green-200">
+        <section className="fixed top-0 z-50 w-screen h-auto left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-green-200">
             <div className="max-w-5xl mx-auto px-4">
-                <div className="w-full h-16 flex items-center justify-between p-4">
+                <div className="w-full h-16 flex items-center justify-between">
                     {/* Logo & App Name */}
                     <Link href="/">
-                        <div className="flex items-center gap-2 cursor-pointer">
+                        <div className="flex items-center gap-1 cursor-pointer">
                             <Image
                                 src="/zurichlogo.png"
                                 alt="Zurich Agroscience"
-                                width={40}
-                                height={40}
+                                width={30}
+                                height={30}
                             />
                             <p className="uppercase font-semibold text-2xl max-md:text-lg">
                                 Zurich <span className="text-green-700 font-bold">Agroscience</span>
@@ -65,7 +65,7 @@ export default function Navbar() {
                         className="md:hidden p-2"
                         onClick={() => setIsOpen(!isOpen)}
                     >
-                        {isOpen ? <X size={28} /> : <Menu size={28} />}
+                        {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
 

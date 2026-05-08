@@ -25,7 +25,7 @@ export default function RootLayout({
       lang="en"
       className={`${gabarito.className} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full scroll-smooth flex flex-col">
+      <body className="min-h-full scroll-smooth flex flex-col pt-16">
         <Navbar />
         {children}
       </body>

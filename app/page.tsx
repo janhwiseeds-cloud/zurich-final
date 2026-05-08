@@ -16,7 +16,7 @@ export default function Home() {
     return (
         <main className="mx-auto w-full bg-green-600/10 min-h-screen">
             <LandingHero />
-            <section className="p-8 max-w-5xl mx-auto mt-10">
+            <section className="p-8 max-w-7xl mx-auto mt-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {featuredProducts.map((product) => (
                         <ProductCard key={product.id} product={product} />

@@ -50,7 +50,7 @@ export default function LandingHero() {
     </div>
 
     {/* Image Container */}
-    <div className="border-2 border-black outline-green-600 outline-4 rounded-3xl overflow-hidden">
+    <div className="border-4 border-white outline-black outline-2 rounded-3xl overflow-hidden">
         <img
             src="/heroimage.png"
             alt="Hero"
