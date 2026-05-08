@@ -51,9 +51,10 @@ export default function ProductCard({ product, className }: ProductCardProps) {
                 <p className="text-sm text-center text-green-900/70 leading-relaxed mb-4 line-clamp-3">
                     {product.shortDescription}
                 </p>
-                    <p className="text-green-800 md:text-sm text-xl line-clamp-2">
-                        dose: <span className="text-xl md:text-sm bg-green-800 p-2 text-white">{product.usageDetails}</span>
-                    </p>
+                    <div className="text-green-80 flex flex-col items-center justify-center md:text-sm text-xl line-clamp-2">
+                        <div>dose: </div>
+                        <div className="text-xl md:text-sm font-bold bg-green-900 px-6 p-2 text-white">{product.usageDetails}</div>
+                    </div>
 
                     <div className="text-center mt-2">
                         <Link
