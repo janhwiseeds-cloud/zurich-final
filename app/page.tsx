@@ -47,7 +47,30 @@ export default function Home() {
                         </button>
                     </Link>
 
+              
 
+
+<div className="relative w-full pt-10 px-4">
+
+    {/* Badge */}
+    <div className="absolute left-1/2 -translate-x-1/2 top-6 z-20">
+        <div className="bg-white border-2 border-black text-black px-6 py-1 rounded-full whitespace-nowrap">
+            <p className="text-sm font-bold uppercase tracking-wide">
+                New
+            </p>
+        </div>
+    </div>
+
+    {/* Image Container */}
+    <div className="border-2 border-black outline-green-600 outline-4 rounded-3xl overflow-hidden">
+        <img
+            src="/heroimage.png"
+            alt="Hero"
+            className="w-full h-full object-cover"
+        />
+    </div>
+
+</div>
 
                 </div>
             </section>
