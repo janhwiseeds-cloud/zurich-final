@@ -13,7 +13,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
     return (
         <div
             className={cn(
-                "group bg-emerald-200 border outline-4 outline-green-700/100 border-green-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1",
+                "group bg-emerald-200 border-4 outline-2 outline-black border-green-500 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1",
                 className
             )}
         >
