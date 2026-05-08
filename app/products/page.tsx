@@ -15,22 +15,20 @@ export default function ProductsPage() {
         : products.filter(p => p.category === filter);
 
     return (
-        <main className="min-h-screen max-w-7xl mx-auto text-green-900 selection:bg-green-200 selection:text-green-900">
+        <main className="min-h-screen max-w-7xl mx-aut0">
 
             {/* Header */}
-            <section className="pt-32 pb-12 px-6 bg-white border-b border-green-100">
+            <section className=" p-6 bg-white border-b border-green-100">
                 <div className="container mx-auto text-center">
-                    <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-4 text-green-900">
+                    <h1 className="text-4xl md:text-6xl font-black tracking-tight text-green-900">
                         Our <span className="text-green-600">Products</span>
                     </h1>
-                    <p className="text-green-800/70 max-w-2xl mx-auto">
-                        Scientific solutions designed to maximize crop yield and quality. Explore our range of premium fertilizers and pesticides.
-                    </p>
+
                 </div>
             </section>
 
             {/* Filter & Grid */}
-            <section className="py-12 px-6">
+            <section className="p-6">
                 <div className="container mx-auto">
 
                     {/* Filter Tabs */}
