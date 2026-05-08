@@ -23,6 +23,17 @@ export default function Navbar() {
         return pathname.startsWith(href);
     };
 
+    const handleNavClick = (href: string, e: React.MouseEvent) => {
+        if (href.startsWith("#")) {
+            e.preventDefault();
+            const element = document.querySelector(href);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+                setIsOpen(false);
+            }
+        }
+    };
+
     return (
         <section className="fixed top-0 z-50 border-b-2 border-black  h-auto left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-green-200">
             <div className="max-w-5xl mx-auto px-4 ">
@@ -48,6 +59,7 @@ export default function Navbar() {
                             <Link
                                 key={link.href}
                                 href={link.href}
+                                onClick={(e) => handleNavClick(link.href, e)}
                                 className={cn(
                                     "px-4 py-2 rounded-lg text-black font-semibold transition-colors",
                                     isActive(link.href)
@@ -76,7 +88,10 @@ export default function Navbar() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => {
+                                    handleNavClick(link.href, e);
+                                    setIsOpen(false);
+                                }}
                                 className={cn(
                                     "block px-4 py-3 rounded-lg font-semibold transition-colors",
                                     isActive(link.href)
