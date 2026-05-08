@@ -7,3 +7,41 @@
 :root {
   @apply bg-white ;
 }
+
+/* ============================================
+   INFINITE MARQUEE ANIMATION
+   
+   SPEED ADJUSTMENT:
+   - Change the time value (e.g., 40s) to adjust speed
+   - DECREASE (e.g., 20s) = FASTER animation
+   - INCREASE (e.g., 60s) = SLOWER animation
+   ============================================ */
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.marquee-content {
+  display: flex;
+  min-width: max-content;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+  /* ========================================================== */
+  /* ⚡ ADJUST ANIMATION SPEED HERE: Change 40s value         */
+  /* Decrease (e.g., 20s) to go FASTER                        */
+  /* Increase (e.g., 60s) to go SLOWER                        */
+  /* ========================================================== */
+  animation: marquee-scroll 400s linear infinite;
+}
+
+/* Pause animation on hover */
+.marquee-content:hover {
+  animation-play-state: paused;
+}
