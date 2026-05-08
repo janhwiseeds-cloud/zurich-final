@@ -43,6 +43,27 @@ export default function Home() {
                             <ProductCard key={product.id} product={product} />
                         ))}
                     </div>
+                    <div className="relative w-full pt-10 px-4">
+
+    {/* Badge */}
+    <div className="absolute left-1/2  -translate-x-1/2 top-6 z-20">
+        <div className="bg-white border-2 border-black text-black px-6 py-1 rounded-full whitespace-nowrap">
+            <p className="text-sm font-bold uppercase tracking-wide">
+                zurich
+            </p>
+        </div>
+    </div>
+
+    {/* Image Container */}
+    <div className="border-4 border-white mb-20 outline-black outline-2 rounded-3xl overflow-hidden">
+        <img
+            src="/new.png"
+            alt="Hero"
+            className="w-full h-full object-cover"
+        />
+    </div>
+
+</div>
             </div>
         </main>
     );
