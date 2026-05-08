@@ -1,15 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import { MenuIcon } from "lucide-react";
-import ProductCard from "@/components/ProductCard";
 import ReviewCard from "@/components/ReviewCard";
+import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { reviews } from "@/data/reviews";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import LandingHero from "@/components/LandingHero";
+import Review from "@/components/Review";
 
 export default function Home() {
     const featuredProducts = products.slice(0, 6); // Show only the first 6 products as featured
@@ -17,7 +15,9 @@ export default function Home() {
         <main className="mx-auto w-full bg-green-600/10 min-h-screen">
             <div className="max-w-5xl mx-auto">
                 <LandingHero />
-                <section className="p-8 max-w-7xl mx-auto mt-10">
+                <Review extraClass="mt-10" text="This product changed my life!" name="John Doe" rating={5} />
+               
+                <section className="p-8 max-w-7xl mx-auto mt-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {featuredProducts.map((product) => (
                             <ProductCard key={product.id} product={product} />
@@ -30,7 +30,6 @@ export default function Home() {
                     </div>
                 </section>
             </div>
-
         </main>
     );
 }
