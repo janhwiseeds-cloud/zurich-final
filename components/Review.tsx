@@ -7,7 +7,7 @@ type Review = {
 
 export default function Review({ text, name, rating, extraClass }: Review) {
     return (
-        <div className={`flex flex-col items-center justify-center text-center ${extraClass}`}>
+        <div className={`flex flex-col max-w-md mx-auto items-center justify-center text-center ${extraClass}`}>
 
             {/* Stars */}
             <div className="flex items-center text-yellow-400">
@@ -28,13 +28,33 @@ export default function Review({ text, name, rating, extraClass }: Review) {
                 ))}
             </div>
 
-            <p className="text-black text-lg font-semibold">
-                "{text}"
+            <p className="text-black text-lg leading-none mt-2 tracking-tight ">
+                "{highlightWords(text)}"
             </p>
 
-            <p className="text-green-800 mt-2">
+            <p className="text-green-800 mt-4 italic text-sm">
                 -{name}
             </p>
         </div>
     );
+}
+
+export function highlightWords(text: string) {
+    let highlightedCount = 0;
+
+    return text.split(" ").map((word, index) => {
+        const cleanWord = word.replace(/[^a-zA-Z]/g, "");
+
+        if (cleanWord.length > 5 && highlightedCount < 3) {
+            highlightedCount++;
+
+            return (
+                <span key={index} className="text-green-700">
+                    {word}{" "}
+                </span>
+            );
+        }
+
+        return word + " ";
+    });
 }

@@ -14,7 +14,7 @@ export default function Home() {
         <main className="mx-auto w-full bg-green-600/10 min-h-screen">
             <div className="max-w-5xl mx-auto">
                 <LandingHero />
-                <Review extraClass="mt-10" text="This product changed my life!" name="John Doe" rating={5} />
+                <Review extraClass="mt-10" text="Master Blaster 505 cleared my field of pests in just one spray. The knockdown effect is immediate, and my cauliflower crop is finally healthy." name="Rajesh Kumar" rating={5} />
                
                 <section className="p-8 max-w-7xl mx-auto mt-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
