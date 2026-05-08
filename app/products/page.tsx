@@ -15,7 +15,7 @@ export default function ProductsPage() {
         : products.filter(p => p.category === filter);
 
     return (
-        <main className="min-h-screen max-w-5xl mx-auto text-green-900 selection:bg-green-200 selection:text-green-900">
+        <main className="min-h-screen max-w-7xl mx-auto text-green-900 selection:bg-green-200 selection:text-green-900">
 
             {/* Header */}
             <section className="pt-32 pb-12 px-6 bg-white border-b border-green-100">
@@ -51,7 +51,7 @@ export default function ProductsPage() {
                         ))}
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {filteredProducts.map((product) => (
                             <ProductCard key={product.id} product={product} />
                         ))}

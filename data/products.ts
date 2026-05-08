@@ -431,7 +431,7 @@ export const products: Product[] = [
       "Systemic herbicide with quick control",
       "Suitable for cereal crops"
     ],
-    image: "/soldier.jpeg"
+    image: "/soldier2.jpeg"
   },
 
   {
