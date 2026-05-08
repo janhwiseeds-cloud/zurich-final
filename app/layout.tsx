@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google"; // Premium, modern font
+import { Gabarito } from "next/font/google"; // Premium, modern font
 import "./globals.css";
 import { cn } from "../lib/utils";
 
-const outfit = Outfit({
+const gabarito = Gabarito({
   subsets: ["latin"],
-  variable: "--font-outfit",
-  display: "swap",
+  weight: ["400", "500", "600", "700", "900"],
 });
+
 
 export const metadata: Metadata = {
   title: "Zurich Agroscience | Premium Agriculture Solutions",
@@ -20,15 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={cn(
-          "min-h-screen bg-neutral-950 font-sans antialiased text-neutral-100",
-          outfit.variable
-        )}
-      >
-        {children}
-      </body>
+    <html
+      lang="en"
+      className={`${gabarito.className} h-full antialiased scroll-smooth`}
+    >
+      <body className="min-h-full scroll-smooth flex flex-col">{children}</body>
     </html>
   );
 }
