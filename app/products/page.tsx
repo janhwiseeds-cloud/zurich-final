@@ -15,11 +15,11 @@ export default function ProductsPage() {
         : products.filter(p => p.category === filter);
 
     return (
-        <main className="min-h-screen max-w-7xl mx-aut0">
+        <main className="min-h-screen w-full">
 
             {/* Header */}
-            <section className=" p-6 bg-white border-b border-green-100">
-                <div className="container mx-auto text-center">
+            <section className="p-6 bg-white border-b border-green-100">
+                <div className="max-w-7xl mx-auto text-center">
                     <h1 className="text-4xl md:text-6xl font-black tracking-tight text-green-900">
                         Our <span className="text-green-600">Products</span>
                     </h1>
@@ -29,7 +29,7 @@ export default function ProductsPage() {
 
             {/* Filter & Grid */}
             <section className="p-6">
-                <div className="container mx-auto">
+                <div className="max-w-7xl mx-auto">
 
                     {/* Filter Tabs */}
                     <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
@@ -49,7 +49,7 @@ export default function ProductsPage() {
                         ))}
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
                         {filteredProducts.map((product) => (
                             <ProductCard key={product.id} product={product} />
                         ))}
