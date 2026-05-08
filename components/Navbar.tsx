@@ -36,7 +36,7 @@ export default function Navbar() {
                                 width={30}
                                 height={30}
                             />
-                            <p className="uppercase font-semibold text-2xl max-md:text-lg">
+                            <p className="uppercase font-semibold text-lg">
                                 Zurich <span className="text-green-700 font-bold">Agroscience</span>
                             </p>
                         </div>
@@ -51,7 +51,7 @@ export default function Navbar() {
                                 className={cn(
                                     "px-4 py-2 rounded-lg font-semibold transition-colors",
                                     isActive(link.href)
-                                        ? "text-green-700 bg-white"
+                                        ? "text-black bg-white"
                                         : "text-green-950 hover:text-green-700"
                                 )}
                             >
