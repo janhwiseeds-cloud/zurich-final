@@ -14,7 +14,7 @@ export default function Home() {
 
     const last9Products = products.slice(-9); // Get the last 9 products for the "New Arrivals" section
     return (
-        <main className="mx-auto w-full bg-green-600/10 min-h-screen">
+        <main className="mx-auto w-full bg-red-50 min-h-screen">
             <div className="max-w-5xl mx-auto">
                 <LandingHero />
                 <Review extraClass="mt-10" text="Master Blaster 505 cleared my field of pests in just one spray. The knockdown effect is immediate, and my cauliflower crop is finally healthy." name="Rajesh Kumar" rating={5} />
@@ -38,7 +38,7 @@ export default function Home() {
 
 
 
-                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
+                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 mb-10">
                         {last9Products.map((product) => (
                             <ProductCard key={product.id} product={product} />
                         ))}
