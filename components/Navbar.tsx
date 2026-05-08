@@ -71,7 +71,7 @@ export default function Navbar() {
 
                 {/* Mobile Dropdown Menu */}
                 {isOpen && (
-                    <div className="md:hidden bg-green-100 border-t border-green-300 py-4 px-4 space-y-2">
+                    <div className="md:hidden bg-green-100 border-2 rounded-2xl border-green-300 py-4 mb-5 px-4 space-y-2">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}
