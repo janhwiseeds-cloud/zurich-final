@@ -177,13 +177,6 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
                     </div>
                 </div>
             </section>
-
-
-            <footer className="py-10 border-t border-green-200 bg-white text-center">
-                <p className="text-green-800/60 text-sm">
-                    © {new Date().getFullYear()} Zurich Agroscience Pvt Ltd. All rights reserved.
-                </p>
-            </footer>
         </main>
     );
 }
