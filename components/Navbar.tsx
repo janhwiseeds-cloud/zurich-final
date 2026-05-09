@@ -14,7 +14,7 @@ export default function Navbar() {
     const navLinks = [
         { href: "/", label: "Home" },
         { href: "/products", label: "Products" },
-        { href: "#reviews", label: "Reviews" },
+        { href: "/#reviews", label: "Reviews" },
     ];
 
     const isActive = (href: string) => {

@@ -56,7 +56,7 @@ export default function LandingHero() {
                     </p>
 
                    
-                    <div className="mx-auto w-full md:pointer-events-none">
+                    <div className="mx-auto w-full pointer-events-none">
                         <InfiniteMarquee items={marqueeItems} />
                     </div>
                      <Link href="/products">
