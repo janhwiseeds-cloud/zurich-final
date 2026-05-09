@@ -4,7 +4,7 @@ import { generateMetadataConfig, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
   ...generateMetadataConfig({
-    title: "Privacy Policy | Zurich Agroscience",
+    title: "Privacy Policy",
     description: "Zurich Agroscience's privacy practices and how we handle your personal data.",
     url: `${siteConfig.url}/privacy`,
     type: "website",
