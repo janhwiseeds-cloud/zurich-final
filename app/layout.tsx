@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { generateMetadataConfig, siteConfig } from "@/lib/seo";
 import { OrganizationSchema } from "@/components/StructuredData";
 import FallingLeaves from "@/components/FallingLeaves";
+import TopLoader from "@/components/top-loader";
 
 const gabarito = Gabarito({
   subsets: ["latin"],
@@ -57,9 +58,10 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
         <OrganizationSchema />
       </head>
-      <body className="min-h-full scroll-smooth flex flex-col pt-16">
+      <body suppressHydrationWarning className="min-h-full scroll-smooth flex flex-col pt-16">
         <Navbar />
         <FallingLeaves />
+        <TopLoader />
         {children}
         <Footer />
       </body>
