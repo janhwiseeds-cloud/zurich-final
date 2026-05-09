@@ -10,7 +10,7 @@ import { generateMetadataConfig, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
   ...generateMetadataConfig({
-    title: "Premium Agriculture Solutions | Zurich Agroscience",
+    title: "Home",
     description: "Discover advanced pesticides, insecticides, herbicides, fungicides, and plant growth regulators. Zurich Agroscience provides science-backed solutions for modern farming.",
     url: siteConfig.url,
     type: "website",

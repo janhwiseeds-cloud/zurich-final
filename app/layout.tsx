@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   ...generateMetadataConfig({
-    title: "Premium Agriculture Solutions",
+    title: "Zurich Agroscience - Premium Agricultural Solutions",
     description: siteConfig.description,
     url: siteConfig.url,
   }),
