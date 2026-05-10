@@ -8,6 +8,7 @@ import { generateMetadataConfig, siteConfig } from "@/lib/seo";
 import { OrganizationSchema } from "@/components/StructuredData";
 import FallingLeaves from "@/components/FallingLeaves";
 import TopLoader from "@/components/top-loader";
+import { Toaster } from "react-hot-toast";
 
 const gabarito = Gabarito({
   subsets: ["latin"],
@@ -60,6 +61,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning className="min-h-full scroll-smooth flex flex-col pt-16">
         <Navbar />
+        <Toaster />
         <FallingLeaves />
         <TopLoader />
         {children}
