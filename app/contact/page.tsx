@@ -1,6 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 export default function ContactPage() {
 
@@ -9,6 +10,13 @@ export default function ContactPage() {
     const [message, setMessage] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
 
+    const [validPhone, setValidPhone] = useState(true);
+
+
+    useEffect(() => { 
+        const phoneRegex = /^\+?[0-9\s\-()]{10,}$/;
+        setValidPhone(phone === "" || phoneRegex.test(phone));
+    }, [phone]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -45,7 +53,7 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-6xl font-bold text-green-900 mb-4">Contact Us</h1>
 
 
-            <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-md border border-green-100">
+            <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md border border-green-100">
                 <input
                     type="text"
                     placeholder="Your Name"
@@ -60,7 +68,7 @@ export default function ContactPage() {
                     placeholder="Your Phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="border-2 input input-success border-green-300 p-2 rounded-md mb-4 w-full"
+                    className={`border-2  p-2 rounded-md mb-4 w-full ${validPhone ? "input input-success  border-green-300" : "input input-error border-red-300"}`}
                 />
 
 
@@ -68,10 +76,20 @@ export default function ContactPage() {
                     placeholder="Your Message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="border-2 input input-success border-green-300 p-2 rounded-md mb-4 w-full"
+                    className="border-2 h-20 input input-success border-green-300 p-2 rounded-md mb-4 w-full"
                 />
-                <button onClick={handleSubmit} className="btn rounded-lg py-5.5 px-15 cursor-pointer bg-green-600 hover:bg-green-800 outline-2  transtion-all duration-200 font-semibold text-white w-full">submit</button>
-            </div>
+                <button disabled={!validPhone || isSubmitting} type="submit" className="btn rounded-lg py-5.5 px-15 cursor-pointer disabled:opacity-75 bg-green-600 hover:bg-green-800  transtion-all duration-200 font-semibold text-white w-full">
+
+
+                    {isSubmitting ? "Submitting..." : "Submit"}
+
+                </button>
+            </form>
+
+
+            <Link href="/">
+                <p className="mt-4 link">Back To Home</p>
+            </Link>
         </div>
     )
 }
