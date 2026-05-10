@@ -47,7 +47,6 @@ export default function ContactPage() {
 
 
 
-
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-green-50 px-4">
             <h1 className="text-4xl md:text-6xl font-bold text-green-900 mb-4">Contact Us</h1>
@@ -63,13 +62,18 @@ export default function ContactPage() {
                 />
 
 
-                <input
-                    type="text"
-                    placeholder="Your Phone"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className={`border-2  p-2 rounded-md mb-4 w-full ${validPhone ? "input input-success  border-green-300" : "input input-error border-red-300"}`}
-                />
+                <div className="flex items-baseline gap-2">
+                    <div className="border-2 rounded-md w-fit p-1 text-sm px-2 text-black border-green-300">
+                        +91
+                    </div>
+                    <input
+                        type="text"
+                        placeholder="Your Phone"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className={`border-2  p-2 rounded-md mb-4 w-full ${validPhone ? "input input-success  border-green-300" : "input input-error border-red-300"}`}
+                    />
+                </div>
 
 
                 <textarea
