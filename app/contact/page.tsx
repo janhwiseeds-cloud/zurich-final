@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import Link from "next/link";
 
@@ -46,6 +46,13 @@ export default function ContactPage() {
     };
 
 
+    const ReadyMadeMessage = [
+        "Hi, I'm interested in your services.",
+        "Hire me for your agricultural needs.",
+        "I have a question about your products.",
+    ];
+
+
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-green-50 px-4">
@@ -57,6 +64,7 @@ export default function ContactPage() {
                     type="text"
                     placeholder="Your Name"
                     value={name}
+                    required
                     onChange={(e) => setName(e.target.value)}
                     className="border-2 input input-success border-green-300 p-2 rounded-md mb-4 w-full"
                 />
@@ -70,18 +78,41 @@ export default function ContactPage() {
                         type="text"
                         placeholder="Your Phone"
                         value={phone}
+                        required
                         onChange={(e) => setPhone(e.target.value)}
                         className={`border-2  p-2 rounded-md mb-4 w-full ${validPhone ? "input input-success  border-green-300" : "input input-error border-red-300"}`}
                     />
                 </div>
 
 
-                <textarea
-                    placeholder="Your Message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    className="border-2 h-20 input input-success border-green-300 p-2 rounded-md mb-4 w-full"
-                />
+                <div>
+                    <textarea
+                        placeholder="Your Message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        className="border-2 h-20 input input-success border-green-300 p-2 rounded-md mb-4 w-full"
+                    />
+
+
+
+                    <div>
+                        {ReadyMadeMessage.length > 0 && (
+                            <div className="flex flex-col gap-2 mb-4">
+                                {ReadyMadeMessage.map((msg, i) => (
+                                    <button
+                                        key={i}
+                                        type="button"
+                                        aria-label={`Insert message ${i + 1}`}
+                                        onClick={() => setMessage(msg)}
+                                        className="border-2 border-green-500 h-10 text-green-600 rounded-md px-2 py-1 text-sm"
+                                    >
+                                        {msg}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </div>
                 <button disabled={!validPhone || isSubmitting} type="submit" className="btn rounded-lg py-5.5 px-15 cursor-pointer disabled:opacity-75 bg-green-600 hover:bg-green-800  transtion-all duration-200 font-semibold text-white w-full">
 
 
