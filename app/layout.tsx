@@ -61,7 +61,10 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning className="min-h-full scroll-smooth flex flex-col pt-16">
         <Navbar />
-        <Toaster />
+        <Toaster position="top-center"
+          containerStyle={{
+            top: 80,
+          }} />
         <FallingLeaves />
         <TopLoader />
         {children}
