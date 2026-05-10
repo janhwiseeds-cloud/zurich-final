@@ -76,7 +76,7 @@ export default function ContactPage() {
                     </div>
                     <input
                         type="text"
-                        placeholder="Your Phone"
+                        placeholder="Your Phone Number"
                         value={phone}
                         required
                         onChange={(e) => setPhone(e.target.value)}
