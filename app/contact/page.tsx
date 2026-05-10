@@ -66,12 +66,12 @@ export default function ContactPage() {
                     value={name}
                     required
                     onChange={(e) => setName(e.target.value)}
-                    className="border-2 input input-success border-green-300 p-2 rounded-md mb-4 w-full"
+                    className="border-2 input input-success border-green-500 p-2 rounded-md mb-4 w-full"
                 />
 
 
                 <div className="flex items-baseline gap-2">
-                    <div className="border-2 rounded-md w-fit p-1 text-sm px-2 text-black border-green-300">
+                    <div className="border-2 rounded-md w-fit p-1 text-sm px-2 text-black border-green-500">
                         +91
                     </div>
                     <input
@@ -80,7 +80,7 @@ export default function ContactPage() {
                         value={phone}
                         required
                         onChange={(e) => setPhone(e.target.value)}
-                        className={`border-2  p-2 rounded-md mb-4 w-full ${validPhone ? "input input-success  border-green-300" : "input input-error border-red-300"}`}
+                        className={`border-2  p-2 rounded-md mb-4 w-full ${validPhone ? "input input-success  border-green-500" : "input input-error border-red-300"}`}
                     />
                 </div>
 
@@ -90,7 +90,7 @@ export default function ContactPage() {
                         placeholder="Your Message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        className="border-2 h-20 input input-success border-green-300 p-2 rounded-md mb-4 w-full"
+                        className="border-2 h-20 input input-success border-green-500 p-2 rounded-md mb-4 w-full"
                     />
 
 
