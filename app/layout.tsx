@@ -9,6 +9,7 @@ import { OrganizationSchema } from "@/components/StructuredData";
 import FallingLeaves from "@/components/FallingLeaves";
 import TopLoader from "@/components/top-loader";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/next";
 
 const gabarito = Gabarito({
   subsets: ["latin"],
@@ -60,6 +61,7 @@ export default function RootLayout({
         <OrganizationSchema />
       </head>
       <body suppressHydrationWarning className="min-h-full scroll-smooth flex flex-col pt-16">
+        <Analytics />
         <Navbar />
         <Toaster position="top-center"
           containerStyle={{
