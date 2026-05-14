@@ -1,4 +1,6 @@
-import Image from "next/image"
+import Image from "next/image";
+
+import Review from "@/components/Review";
 
 
 export default function AboutPage() {
@@ -23,6 +25,8 @@ export default function AboutPage() {
 
 
 </section>
+<Review extraClass="my-20" text="Packaging and branding look professional compared to local competitors." name="Amit" rating={5}/>
+
 
         </main>
     )
