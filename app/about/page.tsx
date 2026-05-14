@@ -4,7 +4,13 @@ import Image from "next/image"
 export default function AboutPage() {
     return (
         <main className="max-w-7xl mx-auto p-4">
-<section className="my-30 max-md:my-10">
+
+            <section className="text-start md:text-center mt-20 max-md:mt-10">
+                    <h1 className="text-2xl md:text-6xl font-bold text-black">
+                        About <span className="text-green-600 max-md:text-3xl">Zurich Agroscience</span>
+                    </h1>
+            </section>
+<section className="my-20 max-md:my-10">
     <div className="flex max-md:flex-col gap-10 max-md:5 justify-center items-center">
         <div>
             <p className="leading-relaxed max-md:text-sm text-lg">
