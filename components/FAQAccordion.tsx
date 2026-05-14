@@ -20,14 +20,14 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 ">
       {items.map((item, index) => (
         <div key={index} className="border border-green-200 rounded-lg overflow-hidden">
           <button
             onClick={() => toggleAccordion(index)}
             className="w-full px-6 cursor-pointer py-4 flex items-center justify-between bg-green-50 hover:bg-green-100 transition-colors"
           >
-            <h3 className="text-lg font-semibold text-green-900 text-left">{item.title}</h3>
+            <h3 className="text-lg max-md:text-sm font-semibold text-green-900 text-left">{item.title}</h3>
             <ChevronDown
               className={`w-5 h-5 text-green-600 transition-transform duration-300 flex-shrink-0 ${
                 openIndex === index ? "rotate-180" : ""
@@ -41,7 +41,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
             }}
           >
             <div className="px-6 py-4 bg-white border-t border-green-200">
-              <p className="text-green-800 leading-relaxed">{item.content}</p>
+              <p className="text-green-800 max-md:text-sm leading-relaxed">{item.content}</p>
             </div>
           </div>
         </div>

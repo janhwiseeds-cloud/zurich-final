@@ -25,12 +25,13 @@ export default function AboutPage() {
     return (
         <main className="max-w-7xl mx-auto p-4">
 
-            <section className="text-start md:text-center mt-20 max-md:mt-10">
+         
+            <section className="my-20 max-md:my-10">
+                   <section className="text-start my-10 mb-20 md:text-center mt-20 max-md:mt-10">
                 <h1 className="text-2xl md:text-6xl font-bold text-black">
                     About <span className="text-green-600 max-md:text-3xl">Zurich Agroscience</span>
                 </h1>
             </section>
-            <section className="my-20 max-md:my-10">
                 <div className="flex max-md:flex-col gap-10 max-md:5 justify-center items-center">
                     <div className="relative inline-block">
                         <div className="absolute -inset-2 bg-green-300 opacity-50 blur-md rotate-[-2deg] rounded-[10%]"></div>
@@ -44,7 +45,9 @@ export default function AboutPage() {
 
             </section>
 
-            <section className="my-20 max-md:my-10">
+             <Review extraClass="md:mt-30"  text="Packaging and branding look professional compared to local competitors." name="Amit" rating={5}/>
+
+            <section className="md:mt-30 max-md:my-10">
                 <div className="flex flex-row-reverse max-md:flex-col gap-10 max-md:5 justify-center items-center">
                     <div className="relative inline-block">
                         <div className="absolute -inset-2 bg-yellow-300 opacity-50 blur-md rotate-[-2deg] rounded-[10%]"></div>
@@ -58,13 +61,16 @@ export default function AboutPage() {
 
             </section>
 
+              <Review extraClass="md:mt-40" text="The product quality is top-notch and has significantly improved my crop yield." name="Priya" rating={4}/>
+
             {/* FAQ Section */}
-            <section className="my-20  max-md:my-10">
-                <h2 className="text-3xl flex-1 md:text-5xl font-bold text-center text-black mb-12">
+            <section className="my-20 md:mt-50  max-md:my-10">
+                <h2 className="text-3xl flex-1 md:text-5xl font-bold text-center text-black max-md:mb-4 mb-12">
                     Frequently Asked <span className="text-green-600">Questions</span>
                 </h2>
                 <div className="max-w-4xl flex-1 mx-auto">
                     <div className="relative inline-block w-full">
+                          
                             <FAQAccordion
                                 items={[
                                     { title: "What does Zurich Agroscience Pvt Ltd do?", content: "The company works in agrochemicals, fertilizers, pesticides, hybrid seeds, and agricultural crop solutions." },
@@ -77,6 +83,11 @@ export default function AboutPage() {
                     
                     </div>
                 </div>
+            </section>
+
+
+            <section className="md:spcace-y-10 my-40 max-md:my-10 md:grid  gap-20">
+                  <Review text="Customer service was very helpful in addressing my concerns." name="Rahul" rating={5}/>
             </section>
 
 
