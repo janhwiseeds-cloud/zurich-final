@@ -1,7 +1,25 @@
+import { Metadata } from "next";
 import Image from "next/image";
-
 import Review from "@/components/Review";
+import FAQAccordion from "@/components/FAQAccordion";
+import { generateMetadataConfig, siteConfig } from "@/lib/seo";
 
+export const metadata: Metadata = {
+  ...generateMetadataConfig({
+    title: "About | Zurich Agroscience",
+    description: "Learn about Zurich Agroscience - an Indian agrochemical company providing pesticides, fertilizers, hybrid seeds, and agricultural solutions.",
+    url: `${siteConfig.url}/about`,
+    type: "website",
+  }),
+  keywords: [
+    "about zurich agroscience",
+    "agrochemical company",
+    "pesticides",
+    "fertilizers",
+    "hybrid seeds",
+    "india",
+  ],
+};
 
 export default function AboutPage() {
     return (
@@ -25,7 +43,6 @@ export default function AboutPage() {
 
 
             </section>
-            <Review extraClass="my-20" text="Packaging and branding look professional compared to local competitors." name="Amit" rating={5} />
 
             <section className="my-20 max-md:my-10">
                 <div className="flex flex-row-reverse max-md:flex-col gap-10 max-md:5 justify-center items-center">
@@ -39,6 +56,27 @@ export default function AboutPage() {
                 </div>
 
 
+            </section>
+
+            {/* FAQ Section */}
+            <section className="my-20  max-md:my-10">
+                <h2 className="text-3xl flex-1 md:text-5xl font-bold text-center text-black mb-12">
+                    Frequently Asked <span className="text-green-600">Questions</span>
+                </h2>
+                <div className="max-w-4xl flex-1 mx-auto">
+                    <div className="relative inline-block w-full">
+                            <FAQAccordion
+                                items={[
+                                    { title: "What does Zurich Agroscience Pvt Ltd do?", content: "The company works in agrochemicals, fertilizers, pesticides, hybrid seeds, and agricultural crop solutions." },
+                                    { title: "Where is Zurich Agroscience Pvt Ltd located?", content: "Its registered office is in Maheshtala, Kolkata, West Bengal, India." },
+                                    { title: "When was Zurich Agroscience Pvt Ltd established?", content: "The company was incorporated in 2020." },
+                                    { title: "What products does the company sell?", content: "It sells pesticides, bio-fertilizers, crop protection products, and hybrid agricultural seeds." },
+                                    { title: "Is Zurich Agroscience Pvt Ltd an active company?", content: "Yes, public MCA-related records currently list the company as active." },
+                                ]}
+                            />
+                    
+                    </div>
+                </div>
             </section>
 
 
