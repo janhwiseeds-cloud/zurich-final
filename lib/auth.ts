@@ -15,11 +15,11 @@ export async function verifyPassword(password: string, hash: string): Promise<bo
 }
 
 export async function createSession(userId: string) {
-    const expires = new Date(Date.now() + 24 * 60 * 60 * 1000); // 1 day
+    const expires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
     const session = await new SignJWT({ userId, isAdmin: true })
         .setProtectedHeader({ alg: 'HS256' })
         .setIssuedAt()
-        .setExpirationTime('24h')
+        .setExpirationTime('7d')
         .sign(key);
 
     const cookieStore = await cookies();
