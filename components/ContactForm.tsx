@@ -2,6 +2,9 @@
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import Link from "next/link";
+import InfiniteMarquee from "./InfiniteMarquee";
+import { products } from "@/data/products";
+
 
 export default function ContactForm() {
     const [name, setName] = useState("");
@@ -9,6 +12,13 @@ export default function ContactForm() {
     const [message, setMessage] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [validPhone, setValidPhone] = useState(true);
+
+
+      const marqueeItems = products.map(product => ({
+            image: product.image,
+            slug: product.slug,
+            alt: product.name
+        }));
 
     useEffect(() => {
         const phoneRegex = /^\+?[0-9\s\-()]{10,}$/;
@@ -50,7 +60,7 @@ export default function ContactForm() {
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-green-50 px-4">
-            <h1 className="text-4xl md:text-6xl font-bold text-green-900 mb-4">Contact Us</h1>
+            <h1 className="text-4xl md:text-6xl my-20 font-bold text-green-900 mb-4">Contact Us</h1>
 
             <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md border border-green-100">
                 <input
@@ -111,6 +121,10 @@ export default function ContactForm() {
             <Link href="/">
                 <p className="mt-4 link">Back To Home</p>
             </Link>
+
+            <div className="mx-auto w-full my-30 max-md:my-10 pointer-events-none">
+                                    <InfiniteMarquee items={marqueeItems} />
+                                </div>
         </div>
     );
 }
