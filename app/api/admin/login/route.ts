@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { verifyPassword, createSession } from "@/lib/auth";
-import { hash } from "bcryptjs";
 
-const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || "$2a$12$K9U9K9K9K9K9K9K9K9K9KOZjQ0ZjQ0ZjQ0ZjQ0ZjQ0ZjQ0ZjQ0Zi"; // default hash for "admin123"
+const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH;
 
 export async function POST(request: Request) {
   try {
@@ -10,6 +9,14 @@ export async function POST(request: Request) {
 
     if (!password) {
       return NextResponse.json({ ok: false, error: "Password required" }, { status: 400 });
+    }
+
+    if (!ADMIN_PASSWORD_HASH) {
+      console.error("ADMIN_PASSWORD_HASH is not set in environment variables");
+      return NextResponse.json(
+        { ok: false, error: "Server configuration error: Password hash not set" },
+        { status: 500 }
+      );
     }
 
     // Verify password against hashed admin password
@@ -24,6 +31,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true, message: "Logged in successfully" });
   } catch (err: any) {
+    console.error("Login error:", err);
     return NextResponse.json({ ok: false, error: err.message || String(err) }, { status: 500 });
   }
 }
