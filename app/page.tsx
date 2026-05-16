@@ -8,6 +8,7 @@ import Review from "@/components/Review";
 import LandingReview from "@/components/LandingReview";
 import { generateMetadataConfig, siteConfig } from "@/lib/seo";
 
+
 export const metadata: Metadata = {
     ...generateMetadataConfig({
         title: "Home",

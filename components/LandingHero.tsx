@@ -2,6 +2,7 @@
 import Link from "next/link";
 import InfiniteMarquee from "./InfiniteMarquee";
 import { products } from "@/data/products";
+import Highlight from "./HIghlight";
 
 export default function LandingHero() {
     // Transform all products to MarqueeItem format (image and slug)
@@ -51,7 +52,7 @@ export default function LandingHero() {
                         </span>
                     </h1>
                     <p className="text-sm w-100 max-md:w-full">
-                        Zurich Agroscience delivers trusted agro products designed to improve crop health, protect yields, and support sustainable farming practices.
+                        Zurich Agroscience delivers trusted <Highlight>agro products</Highlight> designed to improve crop health, protect yields, and support <Highlight>sustainable farming practices.</Highlight> {" "}
                         From seeds to protection solutions, we help farmers grow with confidence.
                     </p>
 
