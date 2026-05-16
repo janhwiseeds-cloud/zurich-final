@@ -53,7 +53,7 @@ export default function LandingReview() {
                                     <Review key={index} text={review.text} name={review.name} rating={review.rating} />
                                 ))}
                             </div>
-                            <div className="relative w-full pt-10 px-4">
+                            <div className="relative md:hidden w-full pt-10 px-4">
 
     {/* Badge */}
     <div className="absolute left-1/2 -translate-x-1/2 top-6 z-20">

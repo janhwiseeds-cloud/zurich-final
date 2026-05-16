@@ -59,7 +59,7 @@ export default function Home() {
 
                 <Review extraClass="mb-10 p-4" text="Zuri Power really boosted the growth of my paddy crops." name="Bharat Kumar" rating={5} />
 
-                <div className="relative w-full pt-10 px-4">
+                <div className="relative w-full md:hidden pt-10 px-4">
 
 
                     {/* Badge */}
