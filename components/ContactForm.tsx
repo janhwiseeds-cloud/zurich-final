@@ -59,72 +59,85 @@ export default function ContactForm() {
     ];
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-green-50 px-4">
-            <h1 className="text-4xl md:text-6xl my-20 font-bold text-green-900 mb-4">Contact Us</h1>
+       <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#f7fff7] to-[#eef8ee] px-4 overflow-hidden">
+    
+    <h1 className="text-5xl md:text-7xl mt-20 mb-10 font-black tracking-tight text-green-950">
+        Contact Us
+    </h1>
 
-            <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md border border-green-100">
-                <input
-                    type="text"
-                    placeholder="Your Name"
-                    value={name}
-                    required
-                    onChange={(e) => setName(e.target.value)}
-                    className="border-2 input input-success border-green-500 p-2 rounded-md mb-4 w-full"
-                />
+    <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-md rounded-3xl border border-white/40 bg-white/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] p-7"
+    >
+        <input
+            type="text"
+            placeholder="Your Name"
+            value={name}
+            required
+            onChange={(e) => setName(e.target.value)}
+            className="w-full rounded-xl border border-green-200 bg-white px-4 py-3 text-black outline-none transition-all duration-200 focus:border-green-500 focus:ring-4 focus:ring-green-100 mb-4"
+        />
 
-                <div className="flex items-baseline gap-2">
-                    <div className="border-2 rounded-md w-fit p-1 text-sm px-2 text-black border-green-500">
-                        +91
-                    </div>
-                    <input
-                        type="text"
-                        placeholder="Your Phone Number"
-                        value={phone}
-                        required
-                        onChange={(e) => setPhone(e.target.value)}
-                        className={`border-2  p-2 rounded-md mb-4 w-full ${validPhone ? "input input-success  border-green-500" : "input input-error border-red-300"}`}
-                    />
-                </div>
+        <div className="flex items-start gap-2 mb-4">
+            <div className="rounded-xl border border-green-200 bg-white px-4 py-3 text-sm font-medium text-green-900">
+                +91
+            </div>
 
-                <div>
-                    <textarea
-                        placeholder="Your Message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        className="border-2 h-20 input input-success border-green-500 p-2 rounded-md mb-4 w-full"
-                    />
-
-                    <div>
-                        {ReadyMadeMessage.length > 0 && (
-                            <div className="flex flex-col gap-2 mb-4">
-                                {ReadyMadeMessage.map((msg, i) => (
-                                    <button
-                                        key={i}
-                                        type="button"
-                                        aria-label={`Insert message ${i + 1}`}
-                                        onClick={() => setMessage(msg)}
-                                        className="border-2 border-green-500 h-10 text-green-600 rounded-md px-2 py-1 text-sm"
-                                    >
-                                        {msg}
-                                    </button>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                </div>
-                <button disabled={!validPhone || isSubmitting} type="submit" className="btn rounded-lg py-5.5 px-15 cursor-pointer disabled:opacity-75 bg-green-600 hover:bg-green-800  transtion-all duration-200 font-semibold text-white w-full">
-                    {isSubmitting ? "Submitting..." : "Submit"}
-                </button>
-            </form>
-
-
-            <Link href="/">
-                <p className="mt-4 link">Back To Home</p>
-            </Link>
-
-            <div className="mx-auto w-full my-30 max-md:my-10 pointer-events-none">
-                                    <InfiniteMarquee items={marqueeItems} />
-                                </div>
+            <input
+                type="text"
+                placeholder="Your Phone Number"
+                value={phone}
+                required
+                onChange={(e) => setPhone(e.target.value)}
+                className={`w-full rounded-xl border bg-white px-4 py-3 outline-none transition-all duration-200 focus:ring-4 ${
+                    validPhone
+                        ? "border-green-200 focus:border-green-500 focus:ring-green-100"
+                        : "border-red-200 focus:border-red-400 focus:ring-red-100"
+                }`}
+            />
         </div>
+
+        <textarea
+            placeholder="Your Message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="w-full h-28 resize-none rounded-xl border border-green-200 bg-white px-4 py-3 text-black outline-none transition-all duration-200 focus:border-green-500 focus:ring-4 focus:ring-green-100 mb-4"
+        />
+
+        {ReadyMadeMessage.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-5">
+                {ReadyMadeMessage.map((msg, i) => (
+                    <button
+                        key={i}
+                        type="button"
+                        aria-label={`Insert message ${i + 1}`}
+                        onClick={() => setMessage(msg)}
+                        className="rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-medium text-green-700 transition-all duration-200 hover:bg-green-100 hover:border-green-400"
+                    >
+                        {msg}
+                    </button>
+                ))}
+            </div>
+        )}
+
+        <button
+            disabled={!validPhone || isSubmitting}
+            type="submit"
+            className="w-full cursor-pointer rounded-xl bg-green-600 py-3 font-semibold text-white transition-all duration-300 hover:bg-green-700 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60"
+        >
+            {isSubmitting ? "Submitting..." : "Submit"}
+        </button>
+    </form>
+
+    <Link href="/">
+        <p className="mt-6 text-sm underline font-medium text-green-700 hover:text-green-900 transition-colors duration-200">
+            Back To Home
+        </p>
+    </Link>
+
+    <div className="mx-auto w-full my-24 max-md:my-12 pointer-events-none">
+        <InfiniteMarquee items={marqueeItems} />
+    </div>
+</div>
     );
 }
