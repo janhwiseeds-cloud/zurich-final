@@ -3,7 +3,7 @@ import Link from "next/link";
 import InfiniteMarquee from "./InfiniteMarquee";
 import { products } from "@/data/products";
 import Highlight from "./HIghlight";
-
+import ReplaceLetterWithImage from "./ReplaceLetterWithImage";
 export default function LandingHero() {
     // Transform all products to MarqueeItem format (image and slug)
     const marqueeItems = products.map(product => ({
@@ -37,8 +37,9 @@ export default function LandingHero() {
                     </div>
                     <h1 className="uppercase text-4xl sm:text-5xl max-md:text-3xl font-bold tracking-tight relative inline-block leading-tight">
                         <span className="bg-green-600 text-white px-2 py-1 inline-block">
-                            Zurich agroscience
+                            Zurich  <ReplaceLetterWithImage letter="i" imageSrc="/corn.png">  agroscience </ReplaceLetterWithImage>
                         </span>
+                    
 
                         <span className="absolute 
                     -top-3 right-0 
