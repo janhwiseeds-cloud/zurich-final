@@ -3,6 +3,7 @@ import Image from "next/image";
 import Review from "@/components/Review";
 import FAQAccordion from "@/components/FAQAccordion";
 import { generateMetadataConfig, siteConfig } from "@/lib/seo";
+import { FAQPageSchema } from "@/components/StructuredData";
 
 export const metadata: Metadata = {
   ...generateMetadataConfig({
@@ -80,6 +81,15 @@ export default function AboutPage() {
                                     { title: "Is Zurich Agroscience Pvt Ltd an active company?", content: "Yes, public MCA-related records currently list the company as active." },
                                 ]}
                             />
+                                                        <FAQPageSchema
+                                                            items={[
+                                                                { question: "What does Zurich Agroscience Pvt Ltd do?", answer: "The company works in agrochemicals, fertilizers, pesticides, hybrid seeds, and agricultural crop solutions." },
+                                                                { question: "Where is Zurich Agroscience Pvt Ltd located?", answer: "Its registered office is in Maheshtala, Kolkata, West Bengal, India." },
+                                                                { question: "When was Zurich Agroscience Pvt Ltd established?", answer: "The company was incorporated in 2020." },
+                                                                { question: "What products does the company sell?", answer: "It sells pesticides, bio-fertilizers, crop protection products, and hybrid agricultural seeds." },
+                                                                { question: "Is Zurich Agroscience Pvt Ltd an active company?", answer: "Yes, public MCA-related records currently list the company as active." },
+                                                            ]}
+                                                        />
                     
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import { siteConfig } from "@/lib/seo";
 
 interface StructuredDataProps {
-  type: "Organization" | "Product" | "BreadcrumbList";
+  type: "Organization" | "Product" | "BreadcrumbList" | "WebSite" | "LocalBusiness" | "SearchAction" | "FAQPage";
   data: Record<string, any>;
 }
 
@@ -41,6 +41,44 @@ export function OrganizationSchema() {
   );
 }
 
+export function WebSiteSchema() {
+  return (
+    <StructuredData
+      type="WebSite"
+      data={{
+        name: siteConfig.name,
+        url: siteConfig.url,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${siteConfig.url}/products?search={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      }}
+    />
+  );
+}
+
+export function LocalBusinessSchema() {
+  return (
+    <StructuredData
+      type="LocalBusiness"
+      data={{
+        name: siteConfig.name,
+        image: `${siteConfig.url}${siteConfig.bannerImage}`,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: siteConfig.location?.address || "",
+          addressLocality: siteConfig.location?.city || "",
+          addressRegion: siteConfig.location?.region || "",
+          addressCountry: siteConfig.location?.country || "",
+        },
+        telephone: "",
+        url: siteConfig.url,
+      }}
+    />
+  );
+}
+
 export function ProductSchema({ name, description, image, category, slug }: {
   name: string;
   description: string;
@@ -61,6 +99,12 @@ export function ProductSchema({ name, description, image, category, slug }: {
           name: siteConfig.name,
         },
         url: `${siteConfig.url}/products/${slug}`,
+        // If site wants to add offers/pricing later, keep offers template here
+        offers: {
+          "@type": "Offer",
+          url: `${siteConfig.url}/products/${slug}`,
+          availability: "https://schema.org/InStock",
+        },
       }}
     />
   );
@@ -76,6 +120,24 @@ export function BreadcrumbSchema({ items }: { items: Array<{ name: string; url: 
           position: index + 1,
           name: item.name,
           item: item.url,
+        })),
+      }}
+    />
+  );
+}
+
+export function FAQPageSchema({ items }: { items: Array<{ question: string; answer: string }> }) {
+  return (
+    <StructuredData
+      type="FAQPage"
+      data={{
+        mainEntity: items.map((qa) => ({
+          "@type": "Question",
+          name: qa.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: qa.answer,
+          },
         })),
       }}
     />

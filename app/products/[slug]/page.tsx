@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Metadata } from "next";
-import { siteConfig } from "@/lib/seo";
+import { siteConfig, generateLongTailKeywords } from "@/lib/seo";
 import { ProductSchema, BreadcrumbSchema } from "@/components/StructuredData";
 
 // Generate static params for all products
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${product.name} | Zurich Agroscience`,
         description: product.description,
-        keywords: [product.name, product.category, "agriculture", "crop protection", ...siteConfig.keywords],
+        keywords: generateLongTailKeywords([product.name, product.category, "agriculture", "crop protection", ...siteConfig.keywords]),
         openGraph: {
             title: `${product.name} | Zurich Agroscience`,
             description: product.description,

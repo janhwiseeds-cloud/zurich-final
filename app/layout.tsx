@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { generateMetadataConfig, siteConfig } from "@/lib/seo";
 import { OrganizationSchema } from "@/components/StructuredData";
+import { WebSiteSchema, LocalBusinessSchema } from "@/components/StructuredData";
 import FallingLeaves from "@/components/FallingLeaves";
 import TopLoader from "@/components/top-loader";
 import { Toaster } from "react-hot-toast";
@@ -59,6 +60,12 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <OrganizationSchema />
+        <WebSiteSchema />
+        <LocalBusinessSchema />
+        {/* Canonical and geo meta tags to strengthen local SEO */}
+        <link rel="canonical" href={siteConfig.url} />
+        <meta name="geo.region" content={siteConfig.location?.region || "West Bengal"} />
+        <meta name="geo.placename" content={siteConfig.location?.city || "Kolkata"} />
       </head>
       <body suppressHydrationWarning className="min-h-full scroll-smooth flex flex-col pt-16">
         <Analytics />

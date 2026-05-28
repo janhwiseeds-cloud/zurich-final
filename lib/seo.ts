@@ -21,6 +21,13 @@ export const siteConfig = {
     "crop protection",
     "agroscience",
   ],
+  // Primary operating area and address details to strengthen local SEO
+  location: {
+    address: "Maheshtala, Kolkata, West Bengal, India",
+    city: "Kolkata",
+    region: "West Bengal",
+    country: "India",
+  },
 };
 
 export function generateMetadataConfig(params?: {
@@ -58,5 +65,34 @@ export function generateMetadataConfig(params?: {
     alternates: {
       canonical: url,
     },
+    // Add some local-focused keywords and long-tail keyword helper for pages that want them
+    keywords: [
+      ...siteConfig.keywords,
+      "agriculture West Bengal",
+      "crop protection West Bengal",
+      "best pesticide in West Bengal",
+      "best agriculture solutions in Kolkata",
+      "agricultural products Kolkata",
+    ],
   };
+}
+
+// Helper to create location-based long-tail keywords for products and pages
+export function generateLongTailKeywords(baseKeywords: string[], opts?: { city?: string; region?: string }) {
+  const city = opts?.city || siteConfig.location?.city || "";
+  const region = opts?.region || siteConfig.location?.region || "";
+
+  const locationSuffixes = [city, region].filter(Boolean);
+
+  const longTails: string[] = [];
+
+  baseKeywords.forEach((k) => {
+    locationSuffixes.forEach((loc) => {
+      longTails.push(`${k} in ${loc}`);
+      longTails.push(`best ${k} in ${loc}`);
+      longTails.push(`${k} suppliers ${loc}`);
+    });
+  });
+
+  return Array.from(new Set([...baseKeywords, ...longTails]));
 }
