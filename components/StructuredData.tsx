@@ -1,7 +1,7 @@
 import { siteConfig } from "@/lib/seo";
 
 interface StructuredDataProps {
-  type: "Organization" | "Product" | "BreadcrumbList" | "WebSite" | "LocalBusiness" | "SearchAction" | "FAQPage";
+  type: "Organization" | "Product" | "BreadcrumbList" | "WebSite" | "LocalBusiness" | "SearchAction" | "FAQPage" | "Article";
   data: Record<string, any>;
 }
 
@@ -139,6 +139,22 @@ export function FAQPageSchema({ items }: { items: Array<{ question: string; answ
             text: qa.answer,
           },
         })),
+      }}
+    />
+  );
+}
+
+export function ArticleSchema({ title, description, author, datePublished, image, url }: { title: string; description: string; author: string; datePublished: string; image?: string; url: string }) {
+  return (
+    <StructuredData
+      type="Article"
+      data={{
+        headline: title,
+        description,
+        author: { "@type": "Organization", name: author },
+        datePublished,
+        image: image ? `${siteConfig.url}${image}` : undefined,
+        url,
       }}
     />
   );

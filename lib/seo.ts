@@ -70,7 +70,6 @@ export function generateMetadataConfig(params?: {
       ...siteConfig.keywords,
       "agriculture West Bengal",
       "crop protection West Bengal",
-      "best pesticide in West Bengal",
       "best agriculture solutions in Kolkata",
       "agricultural products Kolkata",
     ],
