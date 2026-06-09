@@ -7,7 +7,7 @@ export default function NotFound() {
                 href="/"
                 className="px-6 py-3 bg-green-600 text-white rounded-xl outline-1 border-3 outline-black hover:bg-green-700 transition-colors duration-300"
             >
-                Go Back Home
+                Go Back To Home
             </a>
         </div>
     );
